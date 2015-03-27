@@ -43,12 +43,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.menualimentos = new System.Windows.Forms.Button();
+            this.inventario = new System.Windows.Forms.Button();
+            this.altas = new System.Windows.Forms.Button();
+            this.reportes = new System.Windows.Forms.Button();
+            this.modificaciones = new System.Windows.Forms.Button();
+            this.bajas = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.baner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menu.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // baner
@@ -82,7 +94,7 @@
             this.pictureBox3.Image = global::InventariosVillaAlegre.Properties.Resources.alimentos;
             this.pictureBox3.Location = new System.Drawing.Point(397, 3);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(120, 116);
+            this.pictureBox3.Size = new System.Drawing.Size(120, 114);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 20;
             this.pictureBox3.TabStop = false;
@@ -93,7 +105,7 @@
             this.pictureBox2.Image = global::InventariosVillaAlegre.Properties.Resources.logo_villa_alegre_21;
             this.pictureBox2.Location = new System.Drawing.Point(3, 3);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(388, 117);
+            this.pictureBox2.Size = new System.Drawing.Size(388, 114);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 19;
             this.pictureBox2.TabStop = false;
@@ -181,22 +193,132 @@
             // 
             this.menu.BackColor = System.Drawing.Color.Transparent;
             this.menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menu.Controls.Add(this.button1);
+            this.menu.Controls.Add(this.reportes);
+            this.menu.Controls.Add(this.modificaciones);
+            this.menu.Controls.Add(this.bajas);
+            this.menu.Controls.Add(this.altas);
+            this.menu.Controls.Add(this.inventario);
+            this.menu.Controls.Add(this.menualimentos);
             this.menu.Location = new System.Drawing.Point(1, 127);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(200, 550);
             this.menu.TabIndex = 5;
             // 
-            // button1
+            // menualimentos
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(23, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(152, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Aparece";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menualimentos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menualimentos.Location = new System.Drawing.Point(23, 20);
+            this.menualimentos.Name = "menualimentos";
+            this.menualimentos.Size = new System.Drawing.Size(152, 49);
+            this.menualimentos.TabIndex = 0;
+            this.menualimentos.Text = "Menus";
+            this.menualimentos.UseVisualStyleBackColor = true;
+            this.menualimentos.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // inventario
+            // 
+            this.inventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventario.Location = new System.Drawing.Point(23, 112);
+            this.inventario.Name = "inventario";
+            this.inventario.Size = new System.Drawing.Size(152, 49);
+            this.inventario.TabIndex = 1;
+            this.inventario.Text = "Inventario";
+            this.inventario.UseVisualStyleBackColor = true;
+            // 
+            // altas
+            // 
+            this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altas.Location = new System.Drawing.Point(23, 204);
+            this.altas.Name = "altas";
+            this.altas.Size = new System.Drawing.Size(152, 49);
+            this.altas.TabIndex = 2;
+            this.altas.Text = "Altas";
+            this.altas.UseVisualStyleBackColor = true;
+            // 
+            // reportes
+            // 
+            this.reportes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportes.Location = new System.Drawing.Point(23, 480);
+            this.reportes.Name = "reportes";
+            this.reportes.Size = new System.Drawing.Size(152, 49);
+            this.reportes.TabIndex = 5;
+            this.reportes.Text = "Reportes";
+            this.reportes.UseVisualStyleBackColor = true;
+            // 
+            // modificaciones
+            // 
+            this.modificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificaciones.Location = new System.Drawing.Point(23, 388);
+            this.modificaciones.Name = "modificaciones";
+            this.modificaciones.Size = new System.Drawing.Size(152, 49);
+            this.modificaciones.TabIndex = 4;
+            this.modificaciones.Text = "Modificaciones";
+            this.modificaciones.UseVisualStyleBackColor = true;
+            // 
+            // bajas
+            // 
+            this.bajas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bajas.Location = new System.Drawing.Point(23, 296);
+            this.bajas.Name = "bajas";
+            this.bajas.Size = new System.Drawing.Size(152, 49);
+            this.bajas.TabIndex = 3;
+            this.bajas.Text = "Bajas";
+            this.bajas.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.tabControl1);
+            this.panel2.Location = new System.Drawing.Point(207, 127);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1056, 550);
+            this.panel2.TabIndex = 6;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(3, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1052, 542);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
+            this.tabPage1.Location = new System.Drawing.Point(4, 26);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1044, 512);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Menú Semanal";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1044, 512);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Modificación de Menú";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1044, 512);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Historial";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // alimentos
             // 
@@ -204,6 +326,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.baner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -217,6 +340,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menu.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -236,6 +361,16 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel menu;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button menualimentos;
+        private System.Windows.Forms.Button reportes;
+        private System.Windows.Forms.Button modificaciones;
+        private System.Windows.Forms.Button bajas;
+        private System.Windows.Forms.Button altas;
+        private System.Windows.Forms.Button inventario;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
     }
 }
