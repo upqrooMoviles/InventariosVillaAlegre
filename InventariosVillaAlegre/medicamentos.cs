@@ -25,5 +25,10 @@ namespace InventariosVillaAlegre
         {
             hora.Text = DateTime.Now.ToLongTimeString(); 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
