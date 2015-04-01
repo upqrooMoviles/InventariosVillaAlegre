@@ -24,7 +24,7 @@ namespace InventariosVillaAlegre
             //hora.Text = DateTime.Now.ToString("hh:mm:ss");
             timer1.Start();
 
-            tabControl1.Visible = false;
+            //tabControl1.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -34,7 +34,10 @@ namespace InventariosVillaAlegre
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tabControl1.Visible = true;
+           
+
+            //tabControl1.Visible = true;
+            
             //if (this.contenido.Controls.Count > 0)
             //this.contenido.Controls.RemoveAt(0);
             //inventarioalimentos form = Application.OpenForms.OfType<inventarioalimentos>().FirstOrDefault();

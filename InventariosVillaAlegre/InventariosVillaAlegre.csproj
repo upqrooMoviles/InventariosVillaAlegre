@@ -71,11 +71,29 @@
     <Compile Include="alimentos.Designer.cs">
       <DependentUpon>alimentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="altas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="altas.Designer.cs">
+      <DependentUpon>altas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bajas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bajas.Designer.cs">
+      <DependentUpon>bajas.cs</DependentUpon>
+    </Compile>
     <Compile Include="inventarioalimentos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inventarioalimentos.Designer.cs">
       <DependentUpon>inventarioalimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="menus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menus.Designer.cs">
+      <DependentUpon>menus.cs</DependentUpon>
     </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
@@ -88,6 +106,12 @@
     </Compile>
     <Compile Include="medicamentos.Designer.cs">
       <DependentUpon>medicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="modificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificaciones.Designer.cs">
+      <DependentUpon>modificaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
@@ -104,14 +128,26 @@
     <EmbeddedResource Include="alimentos.resx">
       <DependentUpon>alimentos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="altas.resx">
+      <DependentUpon>altas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bajas.resx">
+      <DependentUpon>bajas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="inventarioalimentos.resx">
       <DependentUpon>inventarioalimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menus.resx">
+      <DependentUpon>menus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="medicamentos.resx">
       <DependentUpon>medicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="modificaciones.resx">
+      <DependentUpon>modificaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>

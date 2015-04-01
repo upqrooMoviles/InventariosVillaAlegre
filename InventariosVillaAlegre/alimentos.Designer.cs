@@ -43,24 +43,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menu = new System.Windows.Forms.Panel();
-            this.menualimentos = new System.Windows.Forms.Button();
-            this.inventario = new System.Windows.Forms.Button();
-            this.altas = new System.Windows.Forms.Button();
             this.reportes = new System.Windows.Forms.Button();
             this.modificaciones = new System.Windows.Forms.Button();
             this.bajas = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.altas = new System.Windows.Forms.Button();
+            this.inventario = new System.Windows.Forms.Button();
+            this.menualimentos = new System.Windows.Forms.Button();
+            this.contenedor = new System.Windows.Forms.Panel();
             this.baner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menu.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // baner
@@ -204,37 +198,6 @@
             this.menu.Size = new System.Drawing.Size(200, 550);
             this.menu.TabIndex = 5;
             // 
-            // menualimentos
-            // 
-            this.menualimentos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menualimentos.Location = new System.Drawing.Point(23, 20);
-            this.menualimentos.Name = "menualimentos";
-            this.menualimentos.Size = new System.Drawing.Size(152, 49);
-            this.menualimentos.TabIndex = 0;
-            this.menualimentos.Text = "Menus";
-            this.menualimentos.UseVisualStyleBackColor = true;
-            this.menualimentos.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // inventario
-            // 
-            this.inventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventario.Location = new System.Drawing.Point(23, 112);
-            this.inventario.Name = "inventario";
-            this.inventario.Size = new System.Drawing.Size(152, 49);
-            this.inventario.TabIndex = 1;
-            this.inventario.Text = "Inventario";
-            this.inventario.UseVisualStyleBackColor = true;
-            // 
-            // altas
-            // 
-            this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altas.Location = new System.Drawing.Point(23, 204);
-            this.altas.Name = "altas";
-            this.altas.Size = new System.Drawing.Size(152, 49);
-            this.altas.TabIndex = 2;
-            this.altas.Text = "Altas";
-            this.altas.UseVisualStyleBackColor = true;
-            // 
             // reportes
             // 
             this.reportes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -265,60 +228,45 @@
             this.bajas.Text = "Bajas";
             this.bajas.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // altas
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.tabControl1);
-            this.panel2.Location = new System.Drawing.Point(207, 127);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1056, 550);
-            this.panel2.TabIndex = 6;
+            this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altas.Location = new System.Drawing.Point(23, 204);
+            this.altas.Name = "altas";
+            this.altas.Size = new System.Drawing.Size(152, 49);
+            this.altas.TabIndex = 2;
+            this.altas.Text = "Altas";
+            this.altas.UseVisualStyleBackColor = true;
             // 
-            // tabControl1
+            // inventario
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(3, 3);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1052, 542);
-            this.tabControl1.TabIndex = 0;
+            this.inventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventario.Location = new System.Drawing.Point(23, 112);
+            this.inventario.Name = "inventario";
+            this.inventario.Size = new System.Drawing.Size(152, 49);
+            this.inventario.TabIndex = 1;
+            this.inventario.Text = "Inventario";
+            this.inventario.UseVisualStyleBackColor = true;
             // 
-            // tabPage1
+            // menualimentos
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.tabPage1.Location = new System.Drawing.Point(4, 26);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1044, 512);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Menú Semanal";
+            this.menualimentos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menualimentos.Location = new System.Drawing.Point(23, 20);
+            this.menualimentos.Name = "menualimentos";
+            this.menualimentos.Size = new System.Drawing.Size(152, 49);
+            this.menualimentos.TabIndex = 0;
+            this.menualimentos.Text = "Menus";
+            this.menualimentos.UseVisualStyleBackColor = true;
+            this.menualimentos.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tabPage2
+            // contenedor
             // 
-            this.tabPage2.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1044, 512);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Modificación de Menú";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1044, 512);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Historial";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.contenedor.BackColor = System.Drawing.Color.Transparent;
+            this.contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contenedor.Location = new System.Drawing.Point(207, 127);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(1056, 550);
+            this.contenedor.TabIndex = 6;
             // 
             // alimentos
             // 
@@ -326,7 +274,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.baner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -340,8 +288,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menu.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -367,10 +313,6 @@
         private System.Windows.Forms.Button bajas;
         private System.Windows.Forms.Button altas;
         private System.Windows.Forms.Button inventario;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel contenedor;
     }
 }

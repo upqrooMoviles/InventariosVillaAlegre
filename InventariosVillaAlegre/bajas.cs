@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace InventariosVillaAlegre
 {
-    public partial class inventarioalimentos : Form
+    public partial class bajas : Form
     {
-        public inventarioalimentos()
+        public bajas()
         {
             InitializeComponent();
         }
