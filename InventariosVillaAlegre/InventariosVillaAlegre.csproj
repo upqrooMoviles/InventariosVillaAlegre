@@ -154,14 +154,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,9 +171,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fondo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\alimentos.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\medicamentos.png" />
@@ -248,6 +239,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\16 %28Card delete%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alimentos.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fatcow-Farm-Fresh-Restaurant-menu.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Syntax highlight%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Plus_over%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Minus_over%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

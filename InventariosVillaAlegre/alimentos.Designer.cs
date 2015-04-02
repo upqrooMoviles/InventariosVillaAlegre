@@ -85,7 +85,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::InventariosVillaAlegre.Properties.Resources.alimentos;
+          
             this.pictureBox3.Location = new System.Drawing.Point(397, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(120, 114);
@@ -201,6 +201,7 @@
             // reportes
             // 
             this.reportes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.reportes.Location = new System.Drawing.Point(23, 480);
             this.reportes.Name = "reportes";
             this.reportes.Size = new System.Drawing.Size(152, 49);
@@ -211,6 +212,7 @@
             // modificaciones
             // 
             this.modificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.modificaciones.Location = new System.Drawing.Point(23, 388);
             this.modificaciones.Name = "modificaciones";
             this.modificaciones.Size = new System.Drawing.Size(152, 49);
@@ -221,6 +223,7 @@
             // bajas
             // 
             this.bajas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bajas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.bajas.Location = new System.Drawing.Point(23, 296);
             this.bajas.Name = "bajas";
             this.bajas.Size = new System.Drawing.Size(152, 49);
@@ -231,6 +234,7 @@
             // altas
             // 
             this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.altas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.altas.Location = new System.Drawing.Point(23, 204);
             this.altas.Name = "altas";
             this.altas.Size = new System.Drawing.Size(152, 49);
@@ -241,6 +245,8 @@
             // inventario
             // 
             this.inventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.inventario.Image = global::InventariosVillaAlegre.Properties.Resources._16__Syntax_highlight_;
+            this.inventario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.inventario.Location = new System.Drawing.Point(23, 112);
             this.inventario.Name = "inventario";
             this.inventario.Size = new System.Drawing.Size(152, 49);
@@ -251,6 +257,8 @@
             // menualimentos
             // 
             this.menualimentos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menualimentos.Image = global::InventariosVillaAlegre.Properties.Resources.Fatcow_Farm_Fresh_Restaurant_menu;
+            this.menualimentos.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.menualimentos.Location = new System.Drawing.Point(23, 20);
             this.menualimentos.Name = "menualimentos";
             this.menualimentos.Size = new System.Drawing.Size(152, 49);
