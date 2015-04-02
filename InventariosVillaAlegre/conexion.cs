@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using System.Data;
+using System.Windows.Forms;
 namespace InventariosVillaAlegre
 {
     class conexion
@@ -55,8 +55,9 @@ namespace InventariosVillaAlegre
                 return true;
                 
             }
-            catch
+            catch(Exception e)
             {
+                MessageBox.Show(e.ToString());
                 return false;
             }
             finally
