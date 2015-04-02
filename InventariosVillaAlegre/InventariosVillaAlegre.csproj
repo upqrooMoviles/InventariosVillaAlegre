@@ -47,6 +47,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -83,6 +86,7 @@
     <Compile Include="bajas.Designer.cs">
       <DependentUpon>bajas.cs</DependentUpon>
     </Compile>
+    <Compile Include="conexion.cs" />
     <Compile Include="inventarioalimentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +111,7 @@
     <Compile Include="medicamentos.Designer.cs">
       <DependentUpon>medicamentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="metodosSQL.cs" />
     <Compile Include="modificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
