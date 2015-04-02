@@ -201,9 +201,11 @@
             // reportes
             // 
             this.reportes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reportes.Location = new System.Drawing.Point(23, 480);
+            this.reportes.Image = global::InventariosVillaAlegre.Properties.Resources._16__Header_first_;
+            this.reportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.reportes.Location = new System.Drawing.Point(0, 387);
             this.reportes.Name = "reportes";
-            this.reportes.Size = new System.Drawing.Size(152, 49);
+            this.reportes.Size = new System.Drawing.Size(200, 55);
             this.reportes.TabIndex = 5;
             this.reportes.Text = "Reportes";
             this.reportes.UseVisualStyleBackColor = true;
@@ -211,9 +213,11 @@
             // modificaciones
             // 
             this.modificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modificaciones.Location = new System.Drawing.Point(23, 388);
+            this.modificaciones.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
+            this.modificaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.modificaciones.Location = new System.Drawing.Point(0, 308);
             this.modificaciones.Name = "modificaciones";
-            this.modificaciones.Size = new System.Drawing.Size(152, 49);
+            this.modificaciones.Size = new System.Drawing.Size(200, 55);
             this.modificaciones.TabIndex = 4;
             this.modificaciones.Text = "Modificaciones";
             this.modificaciones.UseVisualStyleBackColor = true;
@@ -221,9 +225,11 @@
             // bajas
             // 
             this.bajas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bajas.Location = new System.Drawing.Point(23, 296);
+            this.bajas.Image = global::InventariosVillaAlegre.Properties.Resources._16__Minus_over_;
+            this.bajas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bajas.Location = new System.Drawing.Point(-1, 228);
             this.bajas.Name = "bajas";
-            this.bajas.Size = new System.Drawing.Size(152, 49);
+            this.bajas.Size = new System.Drawing.Size(200, 55);
             this.bajas.TabIndex = 3;
             this.bajas.Text = "Bajas";
             this.bajas.UseVisualStyleBackColor = true;
@@ -231,9 +237,11 @@
             // altas
             // 
             this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altas.Location = new System.Drawing.Point(23, 204);
+            this.altas.Image = global::InventariosVillaAlegre.Properties.Resources._16__Plus_favorites_;
+            this.altas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.altas.Location = new System.Drawing.Point(-1, 152);
             this.altas.Name = "altas";
-            this.altas.Size = new System.Drawing.Size(152, 49);
+            this.altas.Size = new System.Drawing.Size(200, 55);
             this.altas.TabIndex = 2;
             this.altas.Text = "Altas";
             this.altas.UseVisualStyleBackColor = true;
@@ -241,9 +249,11 @@
             // inventario
             // 
             this.inventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.inventario.Location = new System.Drawing.Point(23, 112);
+            this.inventario.Image = global::InventariosVillaAlegre.Properties.Resources._16__Bullets_and_numbering_;
+            this.inventario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.inventario.Location = new System.Drawing.Point(-1, 73);
             this.inventario.Name = "inventario";
-            this.inventario.Size = new System.Drawing.Size(152, 49);
+            this.inventario.Size = new System.Drawing.Size(200, 55);
             this.inventario.TabIndex = 1;
             this.inventario.Text = "Inventario";
             this.inventario.UseVisualStyleBackColor = true;
@@ -251,9 +261,11 @@
             // menualimentos
             // 
             this.menualimentos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menualimentos.Location = new System.Drawing.Point(23, 20);
+            this.menualimentos.Image = global::InventariosVillaAlegre.Properties.Resources._16__Grid_split_cells_;
+            this.menualimentos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.menualimentos.Location = new System.Drawing.Point(-1, -3);
             this.menualimentos.Name = "menualimentos";
-            this.menualimentos.Size = new System.Drawing.Size(152, 49);
+            this.menualimentos.Size = new System.Drawing.Size(200, 55);
             this.menualimentos.TabIndex = 0;
             this.menualimentos.Text = "Menus";
             this.menualimentos.UseVisualStyleBackColor = true;
@@ -273,7 +285,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1287, 681);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.baner);

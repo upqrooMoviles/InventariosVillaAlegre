@@ -63,9 +63,29 @@ namespace InventariosVillaAlegre.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16__Bullets_and_numbering_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Bullets and numbering)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _16__Card_delete_ {
             get {
                 object obj = ResourceManager.GetObject("16 (Card delete)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16__Card_edit_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Card edit)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,49 @@ namespace InventariosVillaAlegre.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16__Grid_split_cells_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Grid split cells)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16__Header_first_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Header first)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _16__Idcard_ {
             get {
                 object obj = ResourceManager.GetObject("16 (Idcard)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16__Minus_over_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Minus_over)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16__Plus_favorites_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Plus favorites)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
