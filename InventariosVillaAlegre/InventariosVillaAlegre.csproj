@@ -87,11 +87,23 @@
       <DependentUpon>bajas.cs</DependentUpon>
     </Compile>
     <Compile Include="conexion.cs" />
+    <Compile Include="eliminarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eliminarUsuario.Designer.cs">
+      <DependentUpon>eliminarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="inventarioalimentos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inventarioalimentos.Designer.cs">
       <DependentUpon>inventarioalimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="listaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="listaUsuario.Designer.cs">
+      <DependentUpon>listaUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="menus.cs">
       <SubType>Form</SubType>
@@ -118,6 +130,12 @@
     <Compile Include="modificaciones.Designer.cs">
       <DependentUpon>modificaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="modificarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modificarUsuario.Designer.cs">
+      <DependentUpon>modificarUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,11 +144,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registro.Designer.cs">
+      <DependentUpon>registro.cs</DependentUpon>
+    </Compile>
     <Compile Include="reportes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="reportes.Designer.cs">
       <DependentUpon>reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="usuarios.Designer.cs">
+      <DependentUpon>usuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="valores.cs" />
     <EmbeddedResource Include="agregarUsuario.resx">
@@ -173,8 +203,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="registro.resx">
+      <DependentUpon>registro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reportes.resx">
       <DependentUpon>reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usuarios.resx">
+      <DependentUpon>usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -286,6 +322,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\16 %28Align full-4%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28User add%291.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28User edit%29.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16 %28Users%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -18,7 +18,16 @@ namespace InventariosVillaAlegre
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new alimentos());
+            try {
+                metodosSQL m = new metodosSQL();
+                DataSet inicio=m.busqueda("usuarios","idusuarios","tipo_usuario='General'");
+                inicio.Tables[0].Rows[0][0].ToString();
+                Application.Run(new principal());
+
+                }
+            catch { 
+            Application.Run(new registro());
+            }
         }
     }
 }

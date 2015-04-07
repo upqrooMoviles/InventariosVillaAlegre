@@ -213,9 +213,39 @@ namespace InventariosVillaAlegre.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16__User_add_1 {
+            get {
+                object obj = ResourceManager.GetObject("16 (User add)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _16__User_delete_ {
             get {
                 object obj = ResourceManager.GetObject("16 (User delete)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16__User_edit_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (User edit)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _16__Users_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Users)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

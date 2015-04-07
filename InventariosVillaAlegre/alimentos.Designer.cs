@@ -203,7 +203,7 @@
             this.reportes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportes.Image = global::InventariosVillaAlegre.Properties.Resources._16__Header_first_;
             this.reportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.reportes.Location = new System.Drawing.Point(0, 387);
+            this.reportes.Location = new System.Drawing.Point(0, 146);
             this.reportes.Name = "reportes";
             this.reportes.Size = new System.Drawing.Size(200, 55);
             this.reportes.TabIndex = 5;
@@ -216,7 +216,7 @@
             this.modificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificaciones.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
             this.modificaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.modificaciones.Location = new System.Drawing.Point(0, 308);
+            this.modificaciones.Location = new System.Drawing.Point(0, 377);
             this.modificaciones.Name = "modificaciones";
             this.modificaciones.Size = new System.Drawing.Size(200, 55);
             this.modificaciones.TabIndex = 4;
@@ -229,7 +229,7 @@
             this.bajas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bajas.Image = global::InventariosVillaAlegre.Properties.Resources._16__Minus_over_;
             this.bajas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.bajas.Location = new System.Drawing.Point(-1, 228);
+            this.bajas.Location = new System.Drawing.Point(-1, 297);
             this.bajas.Name = "bajas";
             this.bajas.Size = new System.Drawing.Size(200, 55);
             this.bajas.TabIndex = 3;
@@ -242,7 +242,7 @@
             this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altas.Image = global::InventariosVillaAlegre.Properties.Resources._16__Plus_favorites_;
             this.altas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.altas.Location = new System.Drawing.Point(-1, 152);
+            this.altas.Location = new System.Drawing.Point(-1, 221);
             this.altas.Name = "altas";
             this.altas.Size = new System.Drawing.Size(200, 55);
             this.altas.TabIndex = 2;

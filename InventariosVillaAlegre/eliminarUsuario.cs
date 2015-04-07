@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace InventariosVillaAlegre
 {
-    public partial class agregarUsuario : Form
+    public partial class eliminarUsuario : Form
     {
-        public agregarUsuario()
+        public eliminarUsuario()
         {
             InitializeComponent();
         }
-
-        private void agregarUsuario_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        
     }
 }
