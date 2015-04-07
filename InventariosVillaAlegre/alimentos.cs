@@ -34,19 +34,74 @@ namespace InventariosVillaAlegre
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            if (this.contenedor.Controls.Count!=0)
+                this.contenedor.Controls.RemoveAt(0);
+            menus m = new menus();
+            m.FormBorderStyle = FormBorderStyle.None;
+            m.TopLevel = false;
+            m.Parent = contenedor;
+            m.Show();
+        }
 
-            //tabControl1.Visible = true;
+        private void inventario_Click(object sender, EventArgs e)
+        {
+            if (this.contenedor.Controls.Count != 0)
+                this.contenedor.Controls.RemoveAt(0);
+            inventarioalimentos i = new inventarioalimentos();
+            i.FormBorderStyle = FormBorderStyle.None;
+            i.TopLevel = false;
+            i.Parent = contenedor;
+            i.Show();
+
+        }
+
+        private void altas_Click(object sender, EventArgs e)
+        {
+            if (this.contenedor.Controls.Count != 0)
+                this.contenedor.Controls.RemoveAt(0);
+            altas a = new altas();
+            a.FormBorderStyle = FormBorderStyle.None;
+            a.TopLevel = false;
+            a.Parent = contenedor;
+            a.Show();
+
+        }
+
+        private void bajas_Click(object sender, EventArgs e)
+        {
+            if (this.contenedor.Controls.Count != 0)
+                this.contenedor.Controls.RemoveAt(0);
+            bajas b = new bajas();
+            b.FormBorderStyle = FormBorderStyle.None;
+            b.TopLevel = false;
+            b.Parent = contenedor;
+            b.Show();
+
+        }
+
+        private void modificaciones_Click(object sender, EventArgs e)
+        {
+            if (this.contenedor.Controls.Count != 0)
+                this.contenedor.Controls.RemoveAt(0);
+            modificaciones m = new modificaciones();
+            m.FormBorderStyle = FormBorderStyle.None;
+            m.TopLevel = false;
+            m.Parent = contenedor;
+            m.Show();
+
+        }
+
+        private void reportes_Click(object sender, EventArgs e)
+        {
             
-            //if (this.contenido.Controls.Count > 0)
-            //this.contenido.Controls.RemoveAt(0);
-            //inventarioalimentos form = Application.OpenForms.OfType<inventarioalimentos>().FirstOrDefault();
-            //inventarioalimentos hijo1 = form ?? new inventarioalimentos();
-            //hijo1.FormBorderStyle = FormBorderStyle.None;
-            //hijo1.Dock = DockStyle.Fill
-            //this.contenido.Controls.Add(hijo1);
-            //this.contenido.Tag = hijo1;
-            //hijo1.Show();
+            if (this.contenedor.Controls.Count != 0)
+                this.contenedor.Controls.RemoveAt(0);
+            
+             reportes r = new reportes();
+             r.FormBorderStyle = FormBorderStyle.None;
+             r.TopLevel = false;
+             r.Parent = contenedor;
+             r.Show();
         }
     }
 }

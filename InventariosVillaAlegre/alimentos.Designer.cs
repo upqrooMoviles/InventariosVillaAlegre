@@ -209,6 +209,7 @@
             this.reportes.TabIndex = 5;
             this.reportes.Text = "Reportes";
             this.reportes.UseVisualStyleBackColor = true;
+            this.reportes.Click += new System.EventHandler(this.reportes_Click);
             // 
             // modificaciones
             // 
@@ -221,6 +222,7 @@
             this.modificaciones.TabIndex = 4;
             this.modificaciones.Text = "Modificaciones";
             this.modificaciones.UseVisualStyleBackColor = true;
+            this.modificaciones.Click += new System.EventHandler(this.modificaciones_Click);
             // 
             // bajas
             // 
@@ -233,6 +235,7 @@
             this.bajas.TabIndex = 3;
             this.bajas.Text = "Bajas";
             this.bajas.UseVisualStyleBackColor = true;
+            this.bajas.Click += new System.EventHandler(this.bajas_Click);
             // 
             // altas
             // 
@@ -245,6 +248,7 @@
             this.altas.TabIndex = 2;
             this.altas.Text = "Altas";
             this.altas.UseVisualStyleBackColor = true;
+            this.altas.Click += new System.EventHandler(this.altas_Click);
             // 
             // inventario
             // 
@@ -257,6 +261,7 @@
             this.inventario.TabIndex = 1;
             this.inventario.Text = "Inventario";
             this.inventario.UseVisualStyleBackColor = true;
+            this.inventario.Click += new System.EventHandler(this.inventario_Click);
             // 
             // menualimentos
             // 

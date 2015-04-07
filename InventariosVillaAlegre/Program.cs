@@ -18,7 +18,7 @@ namespace InventariosVillaAlegre
             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new modificaciones());
+            Application.Run(new alimentos());
         }
     }
 }
