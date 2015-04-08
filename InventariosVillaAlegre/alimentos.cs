@@ -15,14 +15,21 @@ namespace InventariosVillaAlegre
         public alimentos()
         {
             InitializeComponent();
+            
         }
 
         private void alimentos_Load(object sender, EventArgs e)
         {
-            user.Text = "Usuario 1";
+            user.Text = valores.Usuario;
             fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             //hora.Text = DateTime.Now.ToString("hh:mm:ss");
             timer1.Start();
+            if (valores.Tipo_usuario == "AdminAlimentos")
+            {
+                altas.Visible = true;
+                bajas.Visible = true;
+                modificaciones.Visible = true;
+            }
 
             //tabControl1.Visible = false;
         }
@@ -102,6 +109,12 @@ namespace InventariosVillaAlegre
              r.TopLevel = false;
              r.Parent = contenedor;
              r.Show();
+        }
+
+        private void alimentos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            principal p = new principal();
+            p.Show();
         }
     }
 }

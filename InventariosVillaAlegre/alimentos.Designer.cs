@@ -222,6 +222,7 @@
             this.modificaciones.TabIndex = 4;
             this.modificaciones.Text = "Modificaciones";
             this.modificaciones.UseVisualStyleBackColor = true;
+            this.modificaciones.Visible = false;
             this.modificaciones.Click += new System.EventHandler(this.modificaciones_Click);
             // 
             // bajas
@@ -235,6 +236,7 @@
             this.bajas.TabIndex = 3;
             this.bajas.Text = "Bajas";
             this.bajas.UseVisualStyleBackColor = true;
+            this.bajas.Visible = false;
             this.bajas.Click += new System.EventHandler(this.bajas_Click);
             // 
             // altas
@@ -248,6 +250,7 @@
             this.altas.TabIndex = 2;
             this.altas.Text = "Altas";
             this.altas.UseVisualStyleBackColor = true;
+            this.altas.Visible = false;
             this.altas.Click += new System.EventHandler(this.altas_Click);
             // 
             // inventario
@@ -290,14 +293,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(1287, 681);
+            this.ClientSize = new System.Drawing.Size(1257, 681);
             this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.baner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "alimentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventario Alimentos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.alimentos_FormClosed);
             this.Load += new System.EventHandler(this.alimentos_Load);
             this.baner.ResumeLayout(false);
             this.baner.PerformLayout();

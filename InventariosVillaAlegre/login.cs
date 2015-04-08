@@ -30,6 +30,7 @@ namespace InventariosVillaAlegre
                     usuario=busquedauser.Tables[0].Rows[0][0].ToString();
                     tipo_usuario= busquedauser.Tables[0].Rows[0][1].ToString();
                     valores.Tipo_usuario = tipo_usuario;
+                    valores.Usuario = usuario;
                     llamaformulario();
                 }
                 catch
@@ -132,7 +133,7 @@ namespace InventariosVillaAlegre
 
             else if (valores.Opcion == "usuarios" && valores.Tipo_usuario == "General")
             {
-                agregarUsuario ss = new agregarUsuario();
+                usuarios ss = new usuarios();
                 ss.Show();
                 this.Hide();
             }

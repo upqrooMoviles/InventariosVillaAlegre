@@ -169,48 +169,56 @@
             // 
             // button3
             // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = global::InventariosVillaAlegre.Properties.Resources._16__Users_;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(-2, 198);
+            this.button3.Location = new System.Drawing.Point(6, 198);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 49);
+            this.button3.Size = new System.Drawing.Size(151, 49);
             this.button3.TabIndex = 128;
             this.button3.Text = "Lista de usuarios";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_delete_;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(-2, 134);
+            this.button2.Location = new System.Drawing.Point(6, 134);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 49);
+            this.button2.Size = new System.Drawing.Size(151, 49);
             this.button2.TabIndex = 127;
             this.button2.Text = "Eliminar usuario";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_edit_;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(-2, 70);
+            this.button1.Location = new System.Drawing.Point(6, 70);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 49);
+            this.button1.Size = new System.Drawing.Size(151, 49);
             this.button1.TabIndex = 126;
             this.button1.Text = "Modificar  usuario";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button9
             // 
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
             this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(-2, 3);
+            this.button9.Location = new System.Drawing.Point(6, 3);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(159, 49);
+            this.button9.Size = new System.Drawing.Size(151, 49);
             this.button9.TabIndex = 125;
             this.button9.Text = "Agregar usuario";
             this.button9.UseVisualStyleBackColor = true;
@@ -234,9 +242,11 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "usuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de usuarios";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.usuarios_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

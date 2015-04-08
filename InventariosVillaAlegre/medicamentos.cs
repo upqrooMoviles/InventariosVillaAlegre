@@ -15,10 +15,18 @@ namespace InventariosVillaAlegre
         public medicamentos()
         {
             InitializeComponent();
-            user.Text = "Usuario 1";
+            user.Text = valores.Usuario;
             fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             //hora.Text = DateTime.Now.ToString("hh:mm:ss");
             timer1.Start();
+            if (valores.Tipo_usuario == "AdminMedicamentos" || valores.Tipo_usuario == "General")
+            {
+                actualizar.Visible = true;
+                agregarR.Visible = true;
+                agregarM.Visible = true;
+                eliminarR.Visible = true;
+                eliminarM.Visible = true;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -34,6 +42,12 @@ namespace InventariosVillaAlegre
         private void button3_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void medicamentos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            principal p = new principal();
+            p.Show();
         }
     }
 }
