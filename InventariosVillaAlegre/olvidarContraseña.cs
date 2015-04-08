@@ -17,6 +17,7 @@ namespace InventariosVillaAlegre
         public olvidarContraseña()
         {
             InitializeComponent();
+            user.Focus();
         }
 
         private void precio_KeyPress(object sender, KeyPressEventArgs e)
