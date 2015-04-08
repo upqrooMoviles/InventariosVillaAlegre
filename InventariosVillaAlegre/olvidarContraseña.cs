@@ -57,7 +57,7 @@ namespace InventariosVillaAlegre
         }
 
         public void enviar(String correo, String contraseña, String nombre) {
-            MailMessage email = new MailMessage();
+            /*MailMessage email = new MailMessage();
             email.To.Add(new MailAddress(correo));
             email.From = new MailAddress("villaalegresystem@gmail.com");
             email.Subject = "Recordatorio de contraseña";
@@ -83,7 +83,24 @@ namespace InventariosVillaAlegre
             {
                 MessageBox.Show("Error enviando el correo, Verifique su conexion a internet.");
                 MessageBox.Show(ex.ToString());
+            }*/
+            string body = "Hola "+nombre+"! \n Tu clave de acceso es: "+contraseña+"\n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
+            var client = new SmtpClient("smtp.gmail.com", 587) {
+                Credentials = new NetworkCredential("villaalegresystem@gmail.com", "R351d3Nc14L"),EnableSsl = true
+            };
+
+            try
+            {
+                client.Send("villaalegresystem@gmail.com", correo, "Recordatorio de contraseña", body);
+                MessageBox.Show("¡Contraseña enviada al correo proporcionado!");
+                this.Hide();
             }
+            catch
+            {
+                MessageBox.Show("Correo no enviado, compruebe su conexion a internet.");
+            }
+            
+
         }
         public Boolean validacion()
         {
