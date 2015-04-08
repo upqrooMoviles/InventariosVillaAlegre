@@ -9,6 +9,20 @@ namespace InventariosVillaAlegre
     class valores
     {
         private static string opcion = "";
+        private static string usuario = "";
+        private static string tipo_usuario = "";
+
+        public static string Tipo_usuario
+        {
+            get { return valores.tipo_usuario; }
+            set { valores.tipo_usuario = value; }
+        }
+        public static string Usuario
+        {
+            get { return valores.usuario; }
+            set { valores.usuario = value; }
+        }
+        
 
         public static string Opcion
         {

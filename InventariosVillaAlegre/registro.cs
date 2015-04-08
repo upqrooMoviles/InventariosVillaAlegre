@@ -15,6 +15,7 @@ namespace InventariosVillaAlegre
         public registro()
         {
             InitializeComponent();
+            nombre.Focus();
         }
 
         private void precio_KeyPress(object sender, KeyPressEventArgs e)

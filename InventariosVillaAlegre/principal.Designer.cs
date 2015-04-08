@@ -68,6 +68,7 @@
             // medicamentos
             // 
             this.medicamentos.BackColor = System.Drawing.Color.Transparent;
+            this.medicamentos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.medicamentos.Image = global::InventariosVillaAlegre.Properties.Resources.medicamentos;
             this.medicamentos.Location = new System.Drawing.Point(286, 96);
             this.medicamentos.Name = "medicamentos";
@@ -81,6 +82,7 @@
             // usuarios
             // 
             this.usuarios.BackColor = System.Drawing.Color.Transparent;
+            this.usuarios.Cursor = System.Windows.Forms.Cursors.Hand;
             this.usuarios.Image = global::InventariosVillaAlegre.Properties.Resources.usuarios;
             this.usuarios.Location = new System.Drawing.Point(550, 95);
             this.usuarios.Name = "usuarios";

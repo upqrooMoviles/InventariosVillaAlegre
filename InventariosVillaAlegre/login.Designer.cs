@@ -32,8 +32,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.user = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.entrar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -66,6 +66,7 @@
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.linkLabel1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.Location = new System.Drawing.Point(53, 398);
             this.linkLabel1.Name = "linkLabel1";
@@ -73,22 +74,29 @@
             this.linkLabel1.TabIndex = 2;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Olvide mi contraseña";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // textBox1
+            // user
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(10, 135);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 30);
-            this.textBox1.TabIndex = 3;
+            this.user.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.user.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user.Location = new System.Drawing.Point(10, 135);
+            this.user.MaxLength = 10;
+            this.user.Name = "user";
+            this.user.Size = new System.Drawing.Size(251, 30);
+            this.user.TabIndex = 3;
+            this.user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
             // 
-            // textBox2
+            // pass
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(10, 223);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 30);
-            this.textBox2.TabIndex = 5;
+            this.pass.Font = new System.Drawing.Font("Century", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass.Location = new System.Drawing.Point(10, 223);
+            this.pass.MaxLength = 12;
+            this.pass.Name = "pass";
+            this.pass.PasswordChar = '*';
+            this.pass.Size = new System.Drawing.Size(251, 30);
+            this.pass.TabIndex = 5;
+            this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
             // 
             // label2
             // 
@@ -121,9 +129,9 @@
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(270, 432);
             this.Controls.Add(this.entrar);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.pass);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.user);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -143,8 +151,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox user;
+        private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox entrar;
     }

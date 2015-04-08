@@ -136,6 +136,12 @@
     <Compile Include="modificarUsuario.Designer.cs">
       <DependentUpon>modificarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="olvidarContraseña.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="olvidarContraseña.Designer.cs">
+      <DependentUpon>olvidarContraseña.cs</DependentUpon>
+    </Compile>
     <Compile Include="principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +195,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modificaciones.resx">
       <DependentUpon>modificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="olvidarContraseña.resx">
+      <DependentUpon>olvidarContraseña.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
