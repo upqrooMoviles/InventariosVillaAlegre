@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(registro));
-            this.button9 = new System.Windows.Forms.Button();
+            this.registrar = new System.Windows.Forms.Button();
             this.contraseñaconfirmacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.contraseña = new System.Windows.Forms.TextBox();
@@ -45,19 +45,19 @@
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button9
+            // registrar
             // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(559, 319);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(168, 49);
-            this.button9.TabIndex = 135;
-            this.button9.Text = "Registrar";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.registrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.registrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registrar.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
+            this.registrar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.registrar.Location = new System.Drawing.Point(559, 319);
+            this.registrar.Name = "registrar";
+            this.registrar.Size = new System.Drawing.Size(168, 49);
+            this.registrar.TabIndex = 135;
+            this.registrar.Text = "Registrar";
+            this.registrar.UseVisualStyleBackColor = true;
+            this.registrar.Click += new System.EventHandler(this.registro_Click);
             // 
             // contraseñaconfirmacion
             // 
@@ -67,6 +67,7 @@
             this.contraseñaconfirmacion.MaxLength = 12;
             this.contraseñaconfirmacion.Name = "contraseñaconfirmacion";
             this.contraseñaconfirmacion.PasswordChar = '*';
+            this.contraseñaconfirmacion.ShortcutsEnabled = false;
             this.contraseñaconfirmacion.Size = new System.Drawing.Size(264, 31);
             this.contraseñaconfirmacion.TabIndex = 134;
             this.contraseñaconfirmacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -90,19 +91,23 @@
             this.contraseña.MaxLength = 12;
             this.contraseña.Name = "contraseña";
             this.contraseña.PasswordChar = '*';
+            this.contraseña.ShortcutsEnabled = false;
             this.contraseña.Size = new System.Drawing.Size(264, 31);
             this.contraseña.TabIndex = 132;
-            this.contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clasi_KeyPress);
+            this.contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contraseña_KeyPress);
             // 
             // correo
             // 
             this.correo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.correo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.correo.Location = new System.Drawing.Point(227, 290);
             this.correo.MaxLength = 45;
             this.correo.Name = "correo";
+            this.correo.ShortcutsEnabled = false;
             this.correo.Size = new System.Drawing.Size(264, 31);
             this.correo.TabIndex = 131;
+            this.correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.correo_KeyPress);
             // 
             // label10
             // 
@@ -134,9 +139,10 @@
             this.usuario.Location = new System.Drawing.Point(227, 135);
             this.usuario.MaxLength = 10;
             this.usuario.Name = "usuario";
+            this.usuario.ShortcutsEnabled = false;
             this.usuario.Size = new System.Drawing.Size(264, 31);
             this.usuario.TabIndex = 128;
-            this.usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
+            this.usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usuario_KeyPress);
             // 
             // label9
             // 
@@ -160,6 +166,7 @@
             this.nombre.Name = "nombre";
             this.nombre.Size = new System.Drawing.Size(327, 31);
             this.nombre.TabIndex = 126;
+            this.nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_KeyPress);
             // 
             // label1
             // 
@@ -180,6 +187,7 @@
             this.clave.MaxLength = 10;
             this.clave.Name = "clave";
             this.clave.PasswordChar = '*';
+            this.clave.ShortcutsEnabled = false;
             this.clave.Size = new System.Drawing.Size(264, 31);
             this.clave.TabIndex = 137;
             this.clave.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clave_KeyPress);
@@ -216,7 +224,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.clave);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.registrar);
             this.Controls.Add(this.contraseñaconfirmacion);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.contraseña);
@@ -228,6 +236,7 @@
             this.Controls.Add(this.nombre);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "¡Bienvenido!";
@@ -238,7 +247,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button registrar;
         private System.Windows.Forms.TextBox contraseñaconfirmacion;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox contraseña;

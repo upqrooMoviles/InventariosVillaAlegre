@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Mail;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace InventariosVillaAlegre
         public olvidarContraseña()
         {
             InitializeComponent();
-            user.Focus();
+            user.Select();
         }
 
         private void precio_KeyPress(object sender, KeyPressEventArgs e)
@@ -37,55 +38,33 @@ namespace InventariosVillaAlegre
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void enviarcontraseña_Click(object sender, EventArgs e)
         {
             if (validacion() == true)
             {
-                try
+                if (validarcorreo(mail.Text) == true)
                 {
-                    metodosSQL m = new metodosSQL();
-                    DataSet busquedauser = m.busqueda("usuarios", "nombre, contraseña, correo", "usuario='" + user.Text + "' and correo='" + mail.Text + "'");
-                    String nombre = busquedauser.Tables[0].Rows[0][0].ToString();
-                    String contraseña = busquedauser.Tables[0].Rows[0][1].ToString();
-                    String correo = busquedauser.Tables[0].Rows[0][2].ToString();
-                    enviar(correo, contraseña, nombre);
-                }
-                catch{
-                    MessageBox.Show("Correo y/o usuario no encontrados!");
-                    user.Focus();
+                    try
+                    {
+                        metodosSQL m = new metodosSQL();
+                        DataSet busquedauser = m.busqueda("usuarios", "nombre, contraseña, correo", "usuario='" + user.Text + "' and correo='" + mail.Text + "'");
+                        String nombre = busquedauser.Tables[0].Rows[0][0].ToString();
+                        String contraseña = busquedauser.Tables[0].Rows[0][1].ToString();
+                        String correo = busquedauser.Tables[0].Rows[0][2].ToString();
+                        enviar(correo, contraseña, nombre);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Correo y/o usuario no encontrados!");
+                        user.Focus();
+                    }
                 }
             }
         }
 
         public void enviar(String correo, String contraseña, String nombre) {
-            /*MailMessage email = new MailMessage();
-            email.To.Add(new MailAddress(correo));
-            email.From = new MailAddress("villaalegresystem@gmail.com");
-            email.Subject = "Recordatorio de contraseña";
-            email.Body = "Hola! "+nombre+"\n Tu clave de acceso es: \n <b>"+contraseña+"</b> \n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
-            email.IsBodyHtml = true;
-            email.Priority = MailPriority.Normal;
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "gmail.com";
-            smtp.Port = 2525;
-            smtp.EnableSsl = false;
-            smtp.UseDefaultCredentials = false;
-            smtp.Credentials = new NetworkCredential("villaalegresystem@gmail.com", "R351d3Nc14L");
-            string output = null;
-            try
-            {
-                smtp.Send(email);
-                email.Dispose();
-                MessageBox.Show("¡La contraseña fue enviada a el correo ingresado!");
-                this.Hide();
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error enviando el correo, Verifique su conexion a internet.");
-                MessageBox.Show(ex.ToString());
-            }*/
-            string body = "Hola "+nombre+"! \n Tu clave de acceso es: "+contraseña+"\n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
+            encripDatos en = new encripDatos();
+            string body = "Hola "+nombre+"! \n Tu clave de acceso es: "+en.desencrip(contraseña)+"\n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
             var client = new SmtpClient("smtp.gmail.com", 587) {
                 Credentials = new NetworkCredential("villaalegresystem@gmail.com", "R351d3Nc14L"),EnableSsl = true
             };
@@ -128,6 +107,42 @@ namespace InventariosVillaAlegre
                     MessageBox.Show("Falta rellenar el campo " + campos);
                 else
                     MessageBox.Show("Falta rellenar los campos: \n" + campos);
+                return false;
+            }
+        }
+
+        private void mail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsWhiteSpace(e.KeyChar)) //Al pulsar una letra
+            {
+                e.Handled = true; //Se acepta (todo OK)
+            }
+            else //Para todo lo demas
+            {
+                e.Handled = false; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
+            }
+
+        }
+
+        public Boolean validarcorreo(string email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Formato de correo no valido!");
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Formato de correo no valido!");
                 return false;
             }
         }

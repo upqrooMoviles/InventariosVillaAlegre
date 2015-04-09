@@ -232,6 +232,10 @@
             this.contenedor.Size = new System.Drawing.Size(629, 371);
             this.contenedor.TabIndex = 2;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick_1);
+            // 
             // usuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +251,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administracion de usuarios";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.usuarios_FormClosed);
+            this.Load += new System.EventHandler(this.usuarios_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

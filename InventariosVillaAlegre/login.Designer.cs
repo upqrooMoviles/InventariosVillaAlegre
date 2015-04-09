@@ -83,6 +83,7 @@
             this.user.Location = new System.Drawing.Point(10, 135);
             this.user.MaxLength = 10;
             this.user.Name = "user";
+            this.user.ShortcutsEnabled = false;
             this.user.Size = new System.Drawing.Size(251, 30);
             this.user.TabIndex = 3;
             this.user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
@@ -94,6 +95,7 @@
             this.pass.MaxLength = 12;
             this.pass.Name = "pass";
             this.pass.PasswordChar = '*';
+            this.pass.ShortcutsEnabled = false;
             this.pass.Size = new System.Drawing.Size(251, 30);
             this.pass.TabIndex = 5;
             this.pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.pass_KeyPress);
@@ -140,6 +142,8 @@
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio Sesión";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.login_FormClosed);
+            this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.entrar)).EndInit();
             this.ResumeLayout(false);

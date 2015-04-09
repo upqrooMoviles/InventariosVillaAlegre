@@ -15,13 +15,18 @@ namespace InventariosVillaAlegre
         public usuarios()
         {
             InitializeComponent();
+        }
+
+        private void usuarios_Load(object sender, EventArgs e)
+        {
             user.Text = valores.Usuario;
             fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
-            //hora.Text = DateTime.Now.ToString("hh:mm:ss");
+            hora.Text = DateTime.Now.ToString("hh:mm:ss");
             timer1.Start();
 
         }
-        private void timer1_Tick(object sender, EventArgs e)
+
+        private void timer1_Tick_1(object sender, EventArgs e)
         {
             hora.Text = DateTime.Now.ToLongTimeString();
         }
@@ -78,5 +83,7 @@ namespace InventariosVillaAlegre
             principal p = new principal();
             p.Show();
         }
+
+
     }
 }

@@ -15,7 +15,10 @@ namespace InventariosVillaAlegre
         public login()
         {
             InitializeComponent();
-            user.Focus();
+        }
+        private void login_Load(object sender, EventArgs e)
+        {
+            user.Select();
         }
         String usuario = "", tipo_usuario = "";
         private void entrar_Click(object sender, EventArgs e)
@@ -25,8 +28,8 @@ namespace InventariosVillaAlegre
             {
                 try
                 {
-
-                    DataSet busquedauser = m.busqueda("usuarios", "usuario, tipo_usuario", "usuario='"+user.Text+"' and contraseña='"+pass.Text+"'");
+                    encripDatos en = new encripDatos();
+                    DataSet busquedauser = m.busqueda("usuarios", "usuario, tipo_usuario", "usuario='"+user.Text+"' and contraseña='"+en.encrip(pass.Text)+"'");
                     usuario=busquedauser.Tables[0].Rows[0][0].ToString();
                     tipo_usuario= busquedauser.Tables[0].Rows[0][1].ToString();
                     valores.Tipo_usuario = tipo_usuario;
@@ -48,6 +51,10 @@ namespace InventariosVillaAlegre
         private void user_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
+            {
+                e.Handled = false; //Se acepta (todo OK)
+            }
+            else if (Char.IsNumber(e.KeyChar)) //Al pulsar una letra
             {
                 e.Handled = false; //Se acepta (todo OK)
             }
@@ -117,18 +124,38 @@ namespace InventariosVillaAlegre
         }
         public void llamaformulario()
         {
-            if (valores.Opcion == "alimentos" && valores.Tipo_usuario == "General" || valores.Opcion == "alimentos" && valores.Tipo_usuario == "AdminAlimentos" || valores.Opcion == "alimentos" && valores.Tipo_usuario == "BasicoAlimentos")
+            principal p = new principal();
+
+            if (valores.Opcion == "alimentos")
             {
-                alimentos ss = new alimentos();
-                ss.Show();
-                this.Hide();
+                if (valores.Tipo_usuario == "General" || valores.Tipo_usuario == "AdminAlimentos" || valores.Tipo_usuario == "BasicoAlimentos")
+                {
+                    alimentos ss = new alimentos();
+                    ss.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Verifique sus credenciales de usuario!.\n No es posible accesar al contenido especificado con ese nivel de usuario");
+                    p.Show();
+                    this.Hide();
+                }
             }
 
-            else if (valores.Opcion == "medicamentos" && valores.Tipo_usuario == "General" || valores.Opcion == "medicamentos" && valores.Tipo_usuario == "AdminMedicamentos" || valores.Opcion == "medicamentos" && valores.Tipo_usuario == "BasicoMedicamentos")
+            else if (valores.Opcion == "medicamentos")
             {
-                medicamentos ss = new medicamentos();
-                ss.Show();
-                this.Hide();
+                if (valores.Tipo_usuario == "General" || valores.Tipo_usuario == "AdminMedicamentos" || valores.Tipo_usuario == "BasicoMedicamentos")
+                {
+                    medicamentos ss = new medicamentos();
+                    ss.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Verifique sus credenciales de usuario!.\n No es posible accesar al contenido especificado con ese nivel de usuario");
+                    p.Show();
+                    this.Hide();
+                }
             }
 
             else if (valores.Opcion == "usuarios" && valores.Tipo_usuario == "General")
@@ -140,12 +167,20 @@ namespace InventariosVillaAlegre
             else
             {
                 MessageBox.Show("Verifique sus credenciales de usuario!.\n No es posible accesar al contenido especificado con ese nivel de usuario");
-                principal p = new principal();
+                
                 p.Show();
                 this.Hide();
             }
 
         }
+
+        private void login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            principal p = new principal();
+            p.Show();
+        }
+
+        
 
     }
 }

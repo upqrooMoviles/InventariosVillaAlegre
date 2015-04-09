@@ -29,30 +29,34 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(agregarUsuario));
-            this.clasi = new System.Windows.Forms.TextBox();
+            this.contraseña = new System.Windows.Forms.TextBox();
             this.guardar = new System.Windows.Forms.Button();
             this.tipo = new System.Windows.Forms.ComboBox();
-            this.existencia = new System.Windows.Forms.TextBox();
+            this.correo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.precio = new System.Windows.Forms.TextBox();
+            this.usuario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.codigo = new System.Windows.Forms.TextBox();
+            this.nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contraseñaconfirmacion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
+            this.agregar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // clasi
+            // contraseña
             // 
-            this.clasi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.clasi.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clasi.Location = new System.Drawing.Point(218, 119);
-            this.clasi.Name = "clasi";
-            this.clasi.Size = new System.Drawing.Size(264, 31);
-            this.clasi.TabIndex = 121;
+            this.contraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contraseña.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraseña.Location = new System.Drawing.Point(218, 119);
+            this.contraseña.MaxLength = 12;
+            this.contraseña.Name = "contraseña";
+            this.contraseña.PasswordChar = '*';
+            this.contraseña.ShortcutsEnabled = false;
+            this.contraseña.Size = new System.Drawing.Size(264, 31);
+            this.contraseña.TabIndex = 121;
+            this.contraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contraseña_KeyPress);
             // 
             // guardar
             // 
@@ -69,33 +73,34 @@
             // tipo
             // 
             this.tipo.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tipo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.tipo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tipo.FormattingEnabled = true;
             this.tipo.Items.AddRange(new object[] {
-            "Juego PS3",
-            "Juego PS4",
-            "Juego XBOX 360",
-            "Juego XBOX ONE",
-            "Juego WII",
-            "Juego WII U",
-            "Juego PSVita",
-            "Juego Nintendo 3Ds",
-            "Accesorio",
-            "Consola"});
+            "General",
+            "AdminAlimentos",
+            "AdminMedicamentos",
+            "BasicoAlimentos",
+            "BasicoMedicamentos"});
             this.tipo.Location = new System.Drawing.Point(218, 214);
             this.tipo.Name = "tipo";
             this.tipo.Size = new System.Drawing.Size(264, 30);
             this.tipo.TabIndex = 117;
             // 
-            // existencia
+            // correo
             // 
-            this.existencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.existencia.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.existencia.Location = new System.Drawing.Point(218, 260);
-            this.existencia.Name = "existencia";
-            this.existencia.Size = new System.Drawing.Size(264, 31);
-            this.existencia.TabIndex = 114;
+            this.correo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.correo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.correo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.correo.Location = new System.Drawing.Point(218, 260);
+            this.correo.MaxLength = 45;
+            this.correo.Name = "correo";
+            this.correo.ShortcutsEnabled = false;
+            this.correo.Size = new System.Drawing.Size(264, 31);
+            this.correo.TabIndex = 114;
+            this.correo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.correo_KeyPress);
             // 
             // label10
             // 
@@ -130,14 +135,18 @@
             this.label8.TabIndex = 111;
             this.label8.Text = "Contraseña:";
             // 
-            // precio
+            // usuario
             // 
-            this.precio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.precio.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.precio.Location = new System.Drawing.Point(218, 68);
-            this.precio.Name = "precio";
-            this.precio.Size = new System.Drawing.Size(264, 31);
-            this.precio.TabIndex = 110;
+            this.usuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.usuario.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.usuario.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usuario.Location = new System.Drawing.Point(218, 68);
+            this.usuario.MaxLength = 10;
+            this.usuario.Name = "usuario";
+            this.usuario.ShortcutsEnabled = false;
+            this.usuario.Size = new System.Drawing.Size(264, 31);
+            this.usuario.TabIndex = 110;
+            this.usuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.usuario_KeyPress);
             // 
             // label9
             // 
@@ -150,16 +159,18 @@
             this.label9.TabIndex = 109;
             this.label9.Text = "Usuario:";
             // 
-            // codigo
+            // nombre
             // 
-            this.codigo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.codigo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.codigo.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codigo.Location = new System.Drawing.Point(218, 21);
-            this.codigo.MaxLength = 8;
-            this.codigo.Name = "codigo";
-            this.codigo.Size = new System.Drawing.Size(327, 31);
-            this.codigo.TabIndex = 103;
+            this.nombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.nombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombre.Location = new System.Drawing.Point(218, 21);
+            this.nombre.MaxLength = 45;
+            this.nombre.Name = "nombre";
+            this.nombre.Size = new System.Drawing.Size(327, 31);
+            this.nombre.TabIndex = 103;
+            this.nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombre_KeyPress);
             // 
             // label1
             // 
@@ -172,14 +183,18 @@
             this.label1.TabIndex = 102;
             this.label1.Text = "Nombre:";
             // 
-            // textBox1
+            // contraseñaconfirmacion
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(218, 168);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(264, 31);
-            this.textBox1.TabIndex = 123;
+            this.contraseñaconfirmacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contraseñaconfirmacion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraseñaconfirmacion.Location = new System.Drawing.Point(218, 168);
+            this.contraseñaconfirmacion.MaxLength = 12;
+            this.contraseñaconfirmacion.Name = "contraseñaconfirmacion";
+            this.contraseñaconfirmacion.PasswordChar = '*';
+            this.contraseñaconfirmacion.ShortcutsEnabled = false;
+            this.contraseñaconfirmacion.Size = new System.Drawing.Size(264, 31);
+            this.contraseñaconfirmacion.TabIndex = 123;
+            this.contraseñaconfirmacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contraseñaconfirmacion_KeyPress);
             // 
             // label4
             // 
@@ -192,17 +207,19 @@
             this.label4.TabIndex = 122;
             this.label4.Text = "Repetir Contraseña:";
             // 
-            // button9
+            // agregar
             // 
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(248, 310);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(168, 49);
-            this.button9.TabIndex = 124;
-            this.button9.Text = "Agregar";
-            this.button9.UseVisualStyleBackColor = true;
+            this.agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.agregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregar.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
+            this.agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.agregar.Location = new System.Drawing.Point(248, 310);
+            this.agregar.Name = "agregar";
+            this.agregar.Size = new System.Drawing.Size(168, 49);
+            this.agregar.TabIndex = 124;
+            this.agregar.Text = "Agregar";
+            this.agregar.UseVisualStyleBackColor = true;
+            this.agregar.Click += new System.EventHandler(this.agregar_Click);
             // 
             // agregarUsuario
             // 
@@ -210,19 +227,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(629, 371);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.agregar);
+            this.Controls.Add(this.contraseñaconfirmacion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.clasi);
+            this.Controls.Add(this.contraseña);
             this.Controls.Add(this.guardar);
             this.Controls.Add(this.tipo);
-            this.Controls.Add(this.existencia);
+            this.Controls.Add(this.correo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.precio);
+            this.Controls.Add(this.usuario);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.codigo);
+            this.Controls.Add(this.nombre);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -237,19 +254,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox clasi;
+        private System.Windows.Forms.TextBox contraseña;
         private System.Windows.Forms.Button guardar;
         private System.Windows.Forms.ComboBox tipo;
-        private System.Windows.Forms.TextBox existencia;
+        private System.Windows.Forms.TextBox correo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox precio;
+        private System.Windows.Forms.TextBox usuario;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox codigo;
+        private System.Windows.Forms.TextBox nombre;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox contraseñaconfirmacion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button agregar;
     }
 }

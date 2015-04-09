@@ -24,7 +24,7 @@ namespace InventariosVillaAlegre
             fecha.Text = DateTime.Now.ToString("dd/MM/yyyy");
             //hora.Text = DateTime.Now.ToString("hh:mm:ss");
             timer1.Start();
-            if (valores.Tipo_usuario == "AdminAlimentos")
+            if (valores.Tipo_usuario == "AdminAlimentos"||valores.Tipo_usuario == "General")
             {
                 altas.Visible = true;
                 bajas.Visible = true;
