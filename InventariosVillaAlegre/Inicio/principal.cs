@@ -20,22 +20,21 @@ namespace InventariosVillaAlegre
         private void alimentos_Click(object sender, EventArgs e)
         {
             valores.Opcion = "alimentos";
-            login ss = new login();
-            ss.Show();
-            this.Hide();
+            login();
         }
 
         private void medicamentos_Click(object sender, EventArgs e)
         {
             valores.Opcion = "medicamentos";
-            login ss = new login();
-            ss.Show();
-            this.Hide();
+            login();
         }
 
         private void usuarios_Click(object sender, EventArgs e)
         {
             valores.Opcion = "usuarios";
+            login();   
+        }
+        public void login() {
             login ss = new login();
             ss.Show();
             this.Hide();
