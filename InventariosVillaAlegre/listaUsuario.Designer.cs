@@ -59,6 +59,7 @@
             this.enviar.Text = "Enviar por correo";
             this.enviar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.enviar.UseVisualStyleBackColor = true;
+            this.enviar.Click += new System.EventHandler(this.enviar_Click);
             // 
             // archivo
             // 

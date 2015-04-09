@@ -20,6 +20,7 @@ namespace InventariosVillaAlegre
         public listaUsuario()
         {
             InitializeComponent();
+            System.IO.Directory.CreateDirectory("C:\\Reportes\\ListasUsuarios");
         }
 
         private void listaUsuario_Load(object sender, EventArgs e)
@@ -35,14 +36,20 @@ namespace InventariosVillaAlegre
 
         private void archivo_Click(object sender, EventArgs e)
         {
+            DateTime hora = DateTime.Now;
+            string fcha_ttal = Convert.ToDateTime(hora).Day + "/" + Convert.ToDateTime(hora).Month + "/" + Convert.ToDateTime(hora).Year;
+
             Document doc = new Document(PageSize.A4, 9, 9, 10, 10);
-                string ruta = @".../.../resources/";
-                string fecha = DateTime.Now.ToString("yyyy-MM-dd");
-                string formato = "temp.pdf";
-                string filename = Path.Combine(ruta + formato);
-                iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo.png");
-                jpg.Alignment = Element.ALIGN_CENTER;
-                jpg.ScaleAbsolute(150f, 46f);
+            string ruta = @"C:\\Reportes\\ListasUsuarios\\";
+            string nombrearchivo = "Repote lista usuarios ";
+            string guion = "-";
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            string formato = ".pdf";
+            string filename = Path.Combine(ruta + guion + nombrearchivo + fecha + formato);
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo.png");
+            jpg.Alignment = Element.ALIGN_CENTER;
+            jpg.ScaleAbsolute(300f, 43f);
+                
                 Chunk encab = new Chunk(" Lista de usuarios\n "+fecha+"\n", FontFactory.GetFont("TIMES_ROMAN", 12));
                 try
                 {
@@ -69,7 +76,7 @@ namespace InventariosVillaAlegre
 
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error al crear PDF", "Sistema Gamers", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al crear PDF", "Sistema Villa Alegre", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -142,6 +149,58 @@ namespace InventariosVillaAlegre
                 values[i] = (float)dg.Columns[i].Width;
             }
             return values;
+        }
+
+        private void enviar_Click(object sender, EventArgs e)
+        {
+            DateTime hora = DateTime.Now;
+            string fcha_ttal = Convert.ToDateTime(hora).Day + "/" + Convert.ToDateTime(hora).Month + "/" + Convert.ToDateTime(hora).Year;
+
+            Document doc = new Document(PageSize.A4, 9, 9, 10, 10);
+            string ruta = @"C:\\Reportes\\ListasUsuarios\\";
+            string nombrearchivo = "Repote lista usuarios ";
+            string guion = "-";
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            string formato = ".pdf";
+            string filename = Path.Combine(ruta + guion + nombrearchivo + fecha + formato);
+            valores.rutapdf = ruta + guion + nombrearchivo + fecha + formato;
+            valores.nombrepdf = nombrearchivo + fecha + formato;
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo.png");
+            jpg.Alignment = Element.ALIGN_CENTER;
+            jpg.ScaleAbsolute(300f, 43f);
+
+            Chunk encab = new Chunk(" Lista de usuarios\n " + fecha + "\n", FontFactory.GetFont("TIMES_ROMAN", 12));
+            try
+            {
+                FileStream file = new FileStream
+                (filename, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+                PdfWriter.GetInstance(doc, file);
+                doc.Open();
+
+                doc.Add(new Paragraph(encab));
+                doc.Add(jpg);
+
+                PdfPTable tabla = generarTabla();
+                doc.Add(tabla);
+                doc.Add(new Paragraph("\n\n"));
+                generarDocumento(doc);
+                ////PARRAFO
+                //Paragraph unParrafo = GenerarParrafo3();
+                //doc.Add(unParrafo);
+                Process.Start(filename);
+                doc.Close();
+                MessageBox.Show("Archivo PDF Generado");
+                //doc.Open();
+
+                reportesCorreo frm = new reportesCorreo();
+                frm.Show();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al crear PDF", "Sistema Villa Alegre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         }
