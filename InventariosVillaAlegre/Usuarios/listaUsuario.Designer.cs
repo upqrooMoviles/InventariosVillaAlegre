@@ -39,11 +39,10 @@
             this.usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.usuarios.BackgroundColor = System.Drawing.Color.White;
             this.usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuarios.Enabled = false;
-            this.usuarios.EnableHeadersVisualStyles = false;
             this.usuarios.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.usuarios.Location = new System.Drawing.Point(12, 24);
             this.usuarios.Name = "usuarios";
+            this.usuarios.ReadOnly = true;
             this.usuarios.Size = new System.Drawing.Size(570, 286);
             this.usuarios.TabIndex = 5;
             // 

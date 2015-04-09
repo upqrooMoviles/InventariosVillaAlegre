@@ -18,31 +18,26 @@ namespace InventariosVillaAlegre
         public olvidarContraseña()
         {
             InitializeComponent();
+        }
+
+        private void olvidarContraseña_Load(object sender, EventArgs e)
+        {
             user.Select();
         }
 
-        private void precio_KeyPress(object sender, KeyPressEventArgs e)
+        private void user_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
-
+            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
         }
-
+        private void mail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = checarCaracteres.sinEspacios(e);
+        }
         private void enviarcontraseña_Click(object sender, EventArgs e)
         {
-            if (validacion() == true)
+            if (validacionCampos() == true)
             {
-                if (validarcorreo(mail.Text) == true)
+                if (checarCaracteres.validarcorreo(mail.Text) == true)
                 {
                     try
                     {
@@ -55,7 +50,7 @@ namespace InventariosVillaAlegre
                     }
                     catch
                     {
-                        MessageBox.Show("Correo y/o usuario no encontrados!");
+                        MessageBox.Show("¡Correo y/o usuario no encontrados!");
                         user.Focus();
                     }
                 }
@@ -64,7 +59,7 @@ namespace InventariosVillaAlegre
 
         public void enviar(String correo, String contraseña, String nombre) {
             encripDatos en = new encripDatos();
-            string body = "Hola "+nombre+"! \n Tu clave de acceso es: "+en.desencrip(contraseña)+"\n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
+            string body = "¡Hola "+nombre+"! \n Tu clave de acceso es: "+en.desencrip(contraseña)+"\n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
             var client = new SmtpClient("smtp.gmail.com", 587) {
                 Credentials = new NetworkCredential("villaalegresystem@gmail.com", "R351d3Nc14L"),EnableSsl = true
             };
@@ -77,12 +72,10 @@ namespace InventariosVillaAlegre
             }
             catch
             {
-                MessageBox.Show("Correo no enviado, compruebe su conexion a internet.");
+                MessageBox.Show("¡Correo no enviado, compruebe su conexion a internet.");
             }
-            
-
         }
-        public Boolean validacion()
+        public Boolean validacionCampos()
         {
             int validacion = 0;
             string campos = "";
@@ -111,40 +104,5 @@ namespace InventariosVillaAlegre
             }
         }
 
-        private void mail_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsWhiteSpace(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = true; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = false; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
-
-        }
-
-        public Boolean validarcorreo(string email)
-        {
-            String expresion;
-            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(email, expresion))
-            {
-                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Formato de correo no valido!");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Formato de correo no valido!");
-                return false;
-            }
-        }
     }
 }

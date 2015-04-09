@@ -40,10 +40,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.lista = new System.Windows.Forms.Button();
+            this.eliminar = new System.Windows.Forms.Button();
+            this.modificar = new System.Windows.Forms.Button();
+            this.agregar = new System.Windows.Forms.Button();
             this.contenedor = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -158,71 +158,71 @@
             // panel2
             // 
             this.panel2.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.lista);
+            this.panel2.Controls.Add(this.eliminar);
+            this.panel2.Controls.Add(this.modificar);
+            this.panel2.Controls.Add(this.agregar);
             this.panel2.Location = new System.Drawing.Point(6, 126);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(160, 373);
             this.panel2.TabIndex = 1;
             // 
-            // button3
+            // lista
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::InventariosVillaAlegre.Properties.Resources._16__Users_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(6, 198);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(151, 49);
-            this.button3.TabIndex = 128;
-            this.button3.Text = "Lista de usuarios";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.lista.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lista.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lista.Image = global::InventariosVillaAlegre.Properties.Resources._16__Users_;
+            this.lista.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lista.Location = new System.Drawing.Point(6, 198);
+            this.lista.Name = "lista";
+            this.lista.Size = new System.Drawing.Size(151, 49);
+            this.lista.TabIndex = 128;
+            this.lista.Text = "Lista de usuarios";
+            this.lista.UseVisualStyleBackColor = true;
+            this.lista.Click += new System.EventHandler(this.lista_Click);
             // 
-            // button2
+            // eliminar
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_delete_;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(6, 134);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(151, 49);
-            this.button2.TabIndex = 127;
-            this.button2.Text = "Eliminar usuario";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.eliminar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eliminar.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_delete_;
+            this.eliminar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.eliminar.Location = new System.Drawing.Point(6, 134);
+            this.eliminar.Name = "eliminar";
+            this.eliminar.Size = new System.Drawing.Size(151, 49);
+            this.eliminar.TabIndex = 127;
+            this.eliminar.Text = "Eliminar usuario";
+            this.eliminar.UseVisualStyleBackColor = true;
+            this.eliminar.Click += new System.EventHandler(this.eliminar_Click);
             // 
-            // button1
+            // modificar
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_edit_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(6, 70);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 49);
-            this.button1.TabIndex = 126;
-            this.button1.Text = "Modificar  usuario";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.modificar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modificar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificar.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_edit_;
+            this.modificar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.modificar.Location = new System.Drawing.Point(6, 70);
+            this.modificar.Name = "modificar";
+            this.modificar.Size = new System.Drawing.Size(151, 49);
+            this.modificar.TabIndex = 126;
+            this.modificar.Text = "Modificar  usuario";
+            this.modificar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.modificar.UseVisualStyleBackColor = true;
+            this.modificar.Click += new System.EventHandler(this.modificar_Click);
             // 
-            // button9
+            // agregar
             // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(6, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(151, 49);
-            this.button9.TabIndex = 125;
-            this.button9.Text = "Agregar usuario";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.agregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.agregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.agregar.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_1;
+            this.agregar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.agregar.Location = new System.Drawing.Point(6, 3);
+            this.agregar.Name = "agregar";
+            this.agregar.Size = new System.Drawing.Size(151, 49);
+            this.agregar.TabIndex = 125;
+            this.agregar.Text = "Agregar usuario";
+            this.agregar.UseVisualStyleBackColor = true;
+            this.agregar.Click += new System.EventHandler(this.agregar_Click);
             // 
             // contenedor
             // 
@@ -274,10 +274,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel contenedor;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button agregar;
+        private System.Windows.Forms.Button eliminar;
+        private System.Windows.Forms.Button modificar;
+        private System.Windows.Forms.Button lista;
         private System.Windows.Forms.Timer timer1;
 
     }

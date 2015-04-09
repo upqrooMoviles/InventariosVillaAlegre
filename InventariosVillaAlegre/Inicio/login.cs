@@ -21,80 +21,48 @@ namespace InventariosVillaAlegre
             user.Select();
         }
         String usuario = "", tipo_usuario = "";
+        
+        private void user_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
+        }
+
+        private void pass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
+        }
         private void entrar_Click(object sender, EventArgs e)
         {
             metodosSQL m = new metodosSQL();
-            if (validacion() == true)
+            if (validacionCampos() == true)
             {
                 try
                 {
                     encripDatos en = new encripDatos();
-                    DataSet busquedauser = m.busqueda("usuarios", "usuario, tipo_usuario", "usuario='"+user.Text+"' and contraseña='"+en.encrip(pass.Text)+"'");
-                    usuario=busquedauser.Tables[0].Rows[0][0].ToString();
-                    tipo_usuario= busquedauser.Tables[0].Rows[0][1].ToString();
+                    DataSet busquedauser = m.busqueda("usuarios", "usuario, tipo_usuario", "usuario='" + user.Text + "' and contraseña='" + en.encrip(pass.Text) + "'");
+                    usuario = busquedauser.Tables[0].Rows[0][0].ToString();
+                    tipo_usuario = busquedauser.Tables[0].Rows[0][1].ToString();
                     valores.Tipo_usuario = tipo_usuario;
                     valores.Usuario = usuario;
                     llamaformulario();
                 }
                 catch
                 {
-                    MessageBox.Show("Usuario y/o contraseña no validos!");
+                    MessageBox.Show("¡Usuario y/o contraseña no validos!");
                 }
-                
+
 
             }
 
-            
+
         }
 
-
-        private void user_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsNumber(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
-        }
-
-        private void pass_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
-        }
-
-        
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void recuperarPass_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             olvidarContraseña o = new olvidarContraseña();
             o.Show();
         }
-        public Boolean validacion()
+        public Boolean validacionCampos()
         {
             int validacion = 0;
             string campos = "";
@@ -179,8 +147,5 @@ namespace InventariosVillaAlegre
             principal p = new principal();
             p.Show();
         }
-
-        
-
     }
 }

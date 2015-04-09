@@ -85,7 +85,7 @@
             this.user.ShortcutsEnabled = false;
             this.user.Size = new System.Drawing.Size(264, 31);
             this.user.TabIndex = 129;
-            this.user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.precio_KeyPress);
+            this.user.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_KeyPress);
             // 
             // label9
             // 
@@ -105,9 +105,10 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(393, 44);
+            this.label1.Size = new System.Drawing.Size(379, 44);
             this.label1.TabIndex = 130;
-            this.label1.Text = "Ingrese su usuario y el coreo dado de alta\r\n para enviar su contraseña.\r\n";
+            this.label1.Text = "Ingrese su usuario y coreo dado de alta\r\nen el sistema para enviar su contraseña." +
+    "\r\n";
             // 
             // olvidarContraseña
             // 
@@ -126,6 +127,7 @@
             this.Name = "olvidarContraseña";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enviar contraseña por correo";
+            this.Load += new System.EventHandler(this.olvidarContraseña_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

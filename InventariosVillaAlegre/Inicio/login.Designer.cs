@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.recuperarPass = new System.Windows.Forms.LinkLabel();
             this.user = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -62,19 +62,19 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Usuario:";
             // 
-            // linkLabel1
+            // recuperarPass
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.linkLabel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.linkLabel1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.Location = new System.Drawing.Point(53, 398);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(165, 20);
-            this.linkLabel1.TabIndex = 2;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Olvide mi contraseña";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.recuperarPass.AutoSize = true;
+            this.recuperarPass.BackColor = System.Drawing.Color.Transparent;
+            this.recuperarPass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.recuperarPass.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recuperarPass.Location = new System.Drawing.Point(53, 398);
+            this.recuperarPass.Name = "recuperarPass";
+            this.recuperarPass.Size = new System.Drawing.Size(165, 20);
+            this.recuperarPass.TabIndex = 2;
+            this.recuperarPass.TabStop = true;
+            this.recuperarPass.Text = "Olvide mi contraseña";
+            this.recuperarPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.recuperarPass_LinkClicked);
             // 
             // user
             // 
@@ -134,7 +134,7 @@
             this.Controls.Add(this.pass);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.user);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.recuperarPass);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -155,7 +155,7 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel recuperarPass;
         private System.Windows.Forms.TextBox user;
         private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.Label label2;

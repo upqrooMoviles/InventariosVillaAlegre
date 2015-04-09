@@ -57,7 +57,7 @@
             this.registrar.TabIndex = 135;
             this.registrar.Text = "Registrar";
             this.registrar.UseVisualStyleBackColor = true;
-            this.registrar.Click += new System.EventHandler(this.registro_Click);
+            this.registrar.Click += new System.EventHandler(this.registrar_Click);
             // 
             // contraseñaconfirmacion
             // 
@@ -70,7 +70,7 @@
             this.contraseñaconfirmacion.ShortcutsEnabled = false;
             this.contraseñaconfirmacion.Size = new System.Drawing.Size(264, 31);
             this.contraseñaconfirmacion.TabIndex = 134;
-            this.contraseñaconfirmacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            this.contraseñaconfirmacion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.contraseñaconfirmacion_KeyPress);
             // 
             // label4
             // 
@@ -240,6 +240,7 @@
             this.Name = "registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "¡Bienvenido!";
+            this.Load += new System.EventHandler(this.registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -71,161 +71,162 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="agregarUsuario.cs">
+    <Compile Include="Usuarios\agregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="agregarUsuario.Designer.cs">
+    <Compile Include="Usuarios\agregarUsuario.Designer.cs">
       <DependentUpon>agregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="alimentos.cs">
+    <Compile Include="Alimentos\alimentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="alimentos.Designer.cs">
+    <Compile Include="Alimentos\alimentos.Designer.cs">
       <DependentUpon>alimentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="altas.cs">
+    <Compile Include="Alimentos\altas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="altas.Designer.cs">
+    <Compile Include="Alimentos\altas.Designer.cs">
       <DependentUpon>altas.cs</DependentUpon>
     </Compile>
-    <Compile Include="bajas.cs">
+    <Compile Include="Alimentos\bajas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="bajas.Designer.cs">
+    <Compile Include="Alimentos\bajas.Designer.cs">
       <DependentUpon>bajas.cs</DependentUpon>
     </Compile>
-    <Compile Include="conexion.cs" />
-    <Compile Include="Correos.cs" />
-    <Compile Include="eliminarUsuario.cs">
+    <Compile Include="Clases auxiliares\checarCaracteres.cs" />
+    <Compile Include="MySQL\conexion.cs" />
+    <Compile Include="Clases auxiliares\correos.cs" />
+    <Compile Include="Usuarios\eliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="eliminarUsuario.Designer.cs">
+    <Compile Include="Usuarios\eliminarUsuario.Designer.cs">
       <DependentUpon>eliminarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="encriptarDatos.cs" />
-    <Compile Include="inventarioalimentos.cs">
+    <Compile Include="Clases auxiliares\encriptarDatos.cs" />
+    <Compile Include="Alimentos\inventarioalimentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="inventarioalimentos.Designer.cs">
+    <Compile Include="Alimentos\inventarioalimentos.Designer.cs">
       <DependentUpon>inventarioalimentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="listaUsuario.cs">
+    <Compile Include="Usuarios\listaUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="listaUsuario.Designer.cs">
+    <Compile Include="Usuarios\listaUsuario.Designer.cs">
       <DependentUpon>listaUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="menus.cs">
+    <Compile Include="Alimentos\menus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="menus.Designer.cs">
+    <Compile Include="Alimentos\menus.Designer.cs">
       <DependentUpon>menus.cs</DependentUpon>
     </Compile>
-    <Compile Include="login.cs">
+    <Compile Include="Inicio\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="login.Designer.cs">
+    <Compile Include="Inicio\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
-    <Compile Include="medicamentos.cs">
+    <Compile Include="Medicamentos\medicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="medicamentos.Designer.cs">
+    <Compile Include="Medicamentos\medicamentos.Designer.cs">
       <DependentUpon>medicamentos.cs</DependentUpon>
     </Compile>
-    <Compile Include="metodosSQL.cs" />
-    <Compile Include="modificaciones.cs">
+    <Compile Include="MySQL\metodosSQL.cs" />
+    <Compile Include="Alimentos\modificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modificaciones.Designer.cs">
+    <Compile Include="Alimentos\modificaciones.Designer.cs">
       <DependentUpon>modificaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="modificarUsuario.cs">
+    <Compile Include="Usuarios\modificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="modificarUsuario.Designer.cs">
+    <Compile Include="Usuarios\modificarUsuario.Designer.cs">
       <DependentUpon>modificarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="olvidarContraseña.cs">
+    <Compile Include="Inicio\olvidarContraseña.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="olvidarContraseña.Designer.cs">
+    <Compile Include="Inicio\olvidarContraseña.Designer.cs">
       <DependentUpon>olvidarContraseña.cs</DependentUpon>
     </Compile>
-    <Compile Include="principal.cs">
+    <Compile Include="Inicio\principal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="principal.Designer.cs">
+    <Compile Include="Inicio\principal.Designer.cs">
       <DependentUpon>principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="registro.cs">
+    <Compile Include="Inicio\registro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="registro.Designer.cs">
+    <Compile Include="Inicio\registro.Designer.cs">
       <DependentUpon>registro.cs</DependentUpon>
     </Compile>
-    <Compile Include="reportes.cs">
+    <Compile Include="Alimentos\reportes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reportes.Designer.cs">
+    <Compile Include="Alimentos\reportes.Designer.cs">
       <DependentUpon>reportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="reportesCorreo.cs">
+    <Compile Include="Clases auxiliares\enviarCorreoPDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="reportesCorreo.Designer.cs">
-      <DependentUpon>reportesCorreo.cs</DependentUpon>
+    <Compile Include="Clases auxiliares\enviarCorreoPDF.Designer.cs">
+      <DependentUpon>enviarCorreoPDF.cs</DependentUpon>
     </Compile>
-    <Compile Include="usuarios.cs">
+    <Compile Include="Usuarios\usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="usuarios.Designer.cs">
+    <Compile Include="Usuarios\usuarios.Designer.cs">
       <DependentUpon>usuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="valores.cs" />
-    <EmbeddedResource Include="agregarUsuario.resx">
+    <Compile Include="Clases auxiliares\valores.cs" />
+    <EmbeddedResource Include="Usuarios\agregarUsuario.resx">
       <DependentUpon>agregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="alimentos.resx">
+    <EmbeddedResource Include="Alimentos\alimentos.resx">
       <DependentUpon>alimentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="altas.resx">
+    <EmbeddedResource Include="Alimentos\altas.resx">
       <DependentUpon>altas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="bajas.resx">
+    <EmbeddedResource Include="Alimentos\bajas.resx">
       <DependentUpon>bajas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="eliminarUsuario.resx">
+    <EmbeddedResource Include="Usuarios\eliminarUsuario.resx">
       <DependentUpon>eliminarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="inventarioalimentos.resx">
+    <EmbeddedResource Include="Alimentos\inventarioalimentos.resx">
       <DependentUpon>inventarioalimentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="listaUsuario.resx">
+    <EmbeddedResource Include="Usuarios\listaUsuario.resx">
       <DependentUpon>listaUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="menus.resx">
+    <EmbeddedResource Include="Alimentos\menus.resx">
       <DependentUpon>menus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="Inicio\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="medicamentos.resx">
+    <EmbeddedResource Include="Medicamentos\medicamentos.resx">
       <DependentUpon>medicamentos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modificaciones.resx">
+    <EmbeddedResource Include="Alimentos\modificaciones.resx">
       <DependentUpon>modificaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="modificarUsuario.resx">
+    <EmbeddedResource Include="Usuarios\modificarUsuario.resx">
       <DependentUpon>modificarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="olvidarContraseña.resx">
+    <EmbeddedResource Include="Inicio\olvidarContraseña.resx">
       <DependentUpon>olvidarContraseña.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="principal.resx">
+    <EmbeddedResource Include="Inicio\principal.resx">
       <DependentUpon>principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -238,16 +239,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="registro.resx">
+    <EmbeddedResource Include="Inicio\registro.resx">
       <DependentUpon>registro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportes.resx">
+    <EmbeddedResource Include="Alimentos\reportes.resx">
       <DependentUpon>reportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="reportesCorreo.resx">
-      <DependentUpon>reportesCorreo.cs</DependentUpon>
+    <EmbeddedResource Include="Clases auxiliares\enviarCorreoPDF.resx">
+      <DependentUpon>enviarCorreoPDF.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="usuarios.resx">
+    <EmbeddedResource Include="Usuarios\usuarios.resx">
       <DependentUpon>usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -370,6 +371,7 @@
   <ItemGroup>
     <None Include="Resources\16 %28Users%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

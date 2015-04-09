@@ -31,7 +31,7 @@ namespace InventariosVillaAlegre
             hora.Text = DateTime.Now.ToLongTimeString();
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void agregar_Click(object sender, EventArgs e)
         {
             if (this.contenedor.Controls.Count != 0)
                 this.contenedor.Controls.RemoveAt(0);
@@ -42,7 +42,7 @@ namespace InventariosVillaAlegre
             au.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void modificar_Click(object sender, EventArgs e)
         {
             if (this.contenedor.Controls.Count != 0)
                 this.contenedor.Controls.RemoveAt(0);
@@ -54,7 +54,7 @@ namespace InventariosVillaAlegre
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void eliminar_Click(object sender, EventArgs e)
         {
             if (this.contenedor.Controls.Count != 0)
                 this.contenedor.Controls.RemoveAt(0);
@@ -66,7 +66,7 @@ namespace InventariosVillaAlegre
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void lista_Click(object sender, EventArgs e)
         {
             if (this.contenedor.Controls.Count != 0)
                 this.contenedor.Controls.RemoveAt(0);
