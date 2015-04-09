@@ -46,24 +46,23 @@ namespace InventariosVillaAlegre
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
             string formato = ".pdf";
             string filename = Path.Combine(ruta + guion + nombrearchivo + fecha + formato);
-            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo.png");
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo-villa-alegre-2.png");
             jpg.Alignment = Element.ALIGN_CENTER;
-            jpg.ScaleAbsolute(300f, 43f);
-                
-                Chunk encab = new Chunk(" Lista de usuarios\n "+fecha+"\n", FontFactory.GetFont("TIMES_ROMAN", 12));
+            jpg.ScaleAbsolute(265f, 78f);
+
+
+            Chunk encab = new Chunk(" Lista de usuarios\n " + fecha + "\n", FontFactory.GetFont("TIMES_BOLDITALIC", 12));
                 try
                 {
                     FileStream file = new FileStream
                     (filename, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
                     PdfWriter.GetInstance(doc, file);
                     doc.Open();
-
                     doc.Add(new Paragraph(encab));
                     doc.Add(jpg);
-
-                    PdfPTable tabla = generarTabla();
-                    doc.Add(tabla);
-                    doc.Add(new Paragraph("\n\n"));
+                    //PdfPTable tabla = generarTabla();
+                    //doc.Add(new Paragraph("\n\n"));
+                    //doc.Add(tabla);
                     generarDocumento(doc);
                     ////PARRAFO
                     //Paragraph unParrafo = GenerarParrafo3();
@@ -71,7 +70,6 @@ namespace InventariosVillaAlegre
                     Process.Start(filename);
                     doc.Close();
                     MessageBox.Show("Archivo temporal generado . Guardar en el lugar deseado");
-                    doc.Open();
                 }
 
                 catch (Exception ex)
@@ -82,14 +80,45 @@ namespace InventariosVillaAlegre
             }
         public PdfPTable generarTabla()
         {
-            PdfPTable unaTabla = new PdfPTable(2);
+            PdfPTable unaTabla = new PdfPTable(4);
             unaTabla.SetWidthPercentage(new float[] { 300, 300 }, PageSize.A4);
             //Headers
             unaTabla.AddCell(new Paragraph("Nombre"));
             unaTabla.AddCell(new Paragraph("Usuario"));
             unaTabla.AddCell(new Paragraph("Tipo de usuario"));
             unaTabla.AddCell(new Paragraph("Correo"));
+            
+            float[] headerwidths = GetTamañoColumnas(usuarios);
+            iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN);
 
+            DataGridViewCellStyle style = this.usuarios.ColumnHeadersDefaultCellStyle;
+
+            Phrase objP = new Phrase("A", fuente);
+
+            unaTabla.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+
+            for (int i = 0; i < usuarios.ColumnCount; i++)
+            {
+
+                objP = new Phrase(usuarios.Columns[i].HeaderText, fuente);
+                unaTabla.HorizontalAlignment = Element.ALIGN_CENTER;
+                unaTabla.AddCell(objP);
+            }
+            unaTabla.HeaderRows = 1;
+            unaTabla.DefaultCell.BorderWidth = 1;
+
+            for (int i = 0; i < usuarios.RowCount - 1; i++)
+            {
+                for (int j = 0; j < usuarios.ColumnCount; j++)
+                {
+                    objP = new Phrase(usuarios[j, i].Value.ToString(), fuente);
+                    style.BackColor = Color.WhiteSmoke;
+                    style.ForeColor = Color.Gray;
+                    //cell.BackgroundColor = BaseColor.LIGHT_GRAY;
+                    unaTabla.AddCell(objP);
+                }
+                unaTabla.CompleteRow();
+            }
             //¿Le damos un poco de formato?
             foreach (PdfPCell celda in unaTabla.Rows[0].GetCells())
             {
@@ -163,8 +192,8 @@ namespace InventariosVillaAlegre
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
             string formato = ".pdf";
             string filename = Path.Combine(ruta + guion + nombrearchivo + fecha + formato);
-            valores.rutapdf = ruta + guion + nombrearchivo + fecha + formato;
-            valores.nombrepdf = nombrearchivo + fecha + formato;
+            valores.Rutapdf = ruta + guion + nombrearchivo + fecha + formato;
+            valores.Nombrepdf = nombrearchivo + fecha + formato;
             iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo.png");
             jpg.Alignment = Element.ALIGN_CENTER;
             jpg.ScaleAbsolute(300f, 43f);

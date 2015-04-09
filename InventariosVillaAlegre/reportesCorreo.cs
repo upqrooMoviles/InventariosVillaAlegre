@@ -18,7 +18,7 @@ namespace InventariosVillaAlegre
         {
             InitializeComponent();
             asuntoenviar.Text = "Factura de compra";
-            rutaarchivo.Text = valores.nombrepdf;
+            rutaarchivo.Text = valores.Nombrepdf;
             mensaje.Text = "Factura de compra - Gamers";
             new ToolTip().SetToolTip(enviar, "Enviar Correo");
             this.ActiveControl = correoenviar;
@@ -38,14 +38,14 @@ namespace InventariosVillaAlegre
                     Correos Cr = new Correos();
                     MailMessage mnsj = new MailMessage();
 
-                    mnsj.Subject = valores.nombrepdf;
+                    mnsj.Subject = valores.Nombrepdf;
 
                     mnsj.To.Add(new MailAddress(correoenviar.Text));
 
-                    mnsj.From = new MailAddress("pabloc.hay@outlook.com", "Sistema Gamers");
+                    mnsj.From = new MailAddress("villaalegressystem@gmail.com", "Villa Alegre System");
 
                     /* Si deseamos Adjuntar algún archivo*/
-                    mnsj.Attachments.Add(new Attachment(valores.rutapdf));
+                    mnsj.Attachments.Add(new Attachment(valores.Rutapdf));
 
                     mnsj.Body = mensaje.Text;
 
@@ -53,13 +53,13 @@ namespace InventariosVillaAlegre
                     Cr.MandarCorreo(mnsj);
                     //Enviado = true;
 
-                    MessageBox.Show("Correo Enviado Correctamente", "Sistema Gamers", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Correo Enviado Correctamente", "Confirmacion de correo", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     this.Hide();
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Correo no enviado", "Sistema Gamers", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Correo no enviado, intente nuevamente", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MessageBox.Show(ex.ToString());
             }
         }
