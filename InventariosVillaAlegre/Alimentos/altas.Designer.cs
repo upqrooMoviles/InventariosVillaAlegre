@@ -515,6 +515,7 @@
             this.claveM.Location = new System.Drawing.Point(475, 37);
             this.claveM.MaxLength = 20;
             this.claveM.Name = "claveM";
+            this.claveM.ShortcutsEnabled = false;
             this.claveM.Size = new System.Drawing.Size(220, 28);
             this.claveM.TabIndex = 11;
             this.claveM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.claveM_KeyPress);

@@ -302,15 +302,15 @@ namespace InventariosVillaAlegre
         {
             int validar = 0;
             string campos = "";
-            if (claveP.Text.Trim().Length < 5)
+            if (claveP.Text.Trim().Length < 3)
             {
-                campos += "Clave entre 5 y 10 digitos\n";
+                campos += "Clave entre 3 y 10 digitos\n";
                 validar++;
                 claveP.Focus();
             }
-            if (nombreP.Text.Trim().Length < 5)
+            if (nombreP.Text.Trim().Length < 3)
             {
-                campos += "Nombre del producto entre 5 y 45 digitos\n";
+                campos += "Nombre del producto entre 3 y 45 digitos\n";
                 validar++;
                 nombreP.Focus();
             }
