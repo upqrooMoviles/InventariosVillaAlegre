@@ -23,121 +23,60 @@ namespace InventariosVillaAlegre
             tipo.SelectedIndex = 0;
             nombre.Focus();
         }
-
+        metodosSQL m = new metodosSQL();
         private void usuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsNumber(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
+            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
         }
 
         private void contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
+            e.Handled = checarCaracteres.sinEspacios(e); 
         }
 
         private void contraseñaconfirmacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
+            e.Handled = checarCaracteres.sinEspacios(e); 
         }
 
         private void nombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsNumber(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = true; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = false; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
+            e.Handled = checarCaracteres.sinNumeros(e); 
         }
 
         private void correo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (Char.IsWhiteSpace(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = true; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = false; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
-
+            e.Handled = checarCaracteres.sinEspacios(e); 
         }
 
         private void agregar_Click(object sender, EventArgs e)
         {
-            if (validar() == true&&usuariodif()==true)
+            if (validarCampos() == true&&existenciaUsuario()==true)
             {
-                if (validarcorreo(correo.Text) == true)
+                if (checarCaracteres.validarcorreo(correo.Text) == true)
                 {
                     if (contraseña.Text.ToString().Equals(contraseñaconfirmacion.Text.ToString()))
                     {
-                        encripDatos en = new encripDatos();                    
+                            encripDatos en = new encripDatos();                    
                             string valoresCampos = "'" + nombre.Text + "', '" + usuario.Text + "', '" + en.encrip(contraseña.Text) + "','"+tipo.SelectedItem.ToString()+"','" + correo.Text + "'";
-                            metodosSQL m = new metodosSQL();
                             if (m.insertar("usuarios", "nombre, usuario, contraseña, tipo_usuario, correo", valoresCampos) == true)
                             {
-                                MessageBox.Show("Registro insertado con exito!");
-                                limpiarvalores();
+                                MessageBox.Show("¡Registro insertado con exito!");
+                                limpiarCampos();
                             }
                             else
-                                MessageBox.Show("Registro no insertado, intente de nuevo o contacte al proovedor de software!");
+                                MessageBox.Show("¡Registro no insertado! Intente de nuevo o contacte al proovedor de software.");
                     }
                     else
                     {
-                        MessageBox.Show("Las contraseñas no coinciden!");
+                        MessageBox.Show("¡Las contraseñas no coinciden!");
                         contraseña.Focus();
                     }
                 }
             }
         }
 
-        public Boolean validar()
+        public Boolean validarCampos()
         {
             int validacion = 0;
             string campos = "";
@@ -182,10 +121,9 @@ namespace InventariosVillaAlegre
                 return false;
             }
         }
-        public Boolean usuariodif() {
+        public Boolean existenciaUsuario() {
             try
             {
-                metodosSQL m = new metodosSQL();
                 DataSet busquedauser = m.busqueda("usuarios", "idusuarios", "usuario='" + usuario.Text + "'");
                 string verif = busquedauser.Tables[0].Rows[0][0].ToString();
                 MessageBox.Show("¡El usuario indicado ya existe!");
@@ -196,29 +134,7 @@ namespace InventariosVillaAlegre
                 return true;
             }
         }
-        public Boolean validarcorreo(string email)
-        {
-            String expresion;
-            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(email, expresion))
-            {
-                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    MessageBox.Show("Formato de correo no valido!");
-                    return false;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Formato de correo no valido!");
-                return false;
-            }
-        }
-        public void limpiarvalores() {
+        public void limpiarCampos() {
             tipo.SelectedItem = "General";
             nombre.Text = "";
             usuario.Text = "";
@@ -227,7 +143,5 @@ namespace InventariosVillaAlegre
             correo.Text = "";
             
         }
-
-        
     }
 }

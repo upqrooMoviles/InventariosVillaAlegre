@@ -47,6 +47,7 @@
             this.rutaarchivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rutaarchivo.Location = new System.Drawing.Point(104, 178);
             this.rutaarchivo.Name = "rutaarchivo";
+            this.rutaarchivo.ReadOnly = true;
             this.rutaarchivo.Size = new System.Drawing.Size(296, 31);
             this.rutaarchivo.TabIndex = 89;
             // 
@@ -64,6 +65,7 @@
             // 
             this.mensaje.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mensaje.Location = new System.Drawing.Point(104, 225);
+            this.mensaje.MaxLength = 150;
             this.mensaje.Multiline = true;
             this.mensaje.Name = "mensaje";
             this.mensaje.Size = new System.Drawing.Size(296, 111);
@@ -73,6 +75,7 @@
             // 
             this.asuntoenviar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.asuntoenviar.Location = new System.Drawing.Point(104, 134);
+            this.asuntoenviar.MaxLength = 45;
             this.asuntoenviar.Name = "asuntoenviar";
             this.asuntoenviar.Size = new System.Drawing.Size(296, 31);
             this.asuntoenviar.TabIndex = 85;
@@ -81,9 +84,11 @@
             // 
             this.correoenviar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.correoenviar.Location = new System.Drawing.Point(104, 91);
+            this.correoenviar.MaxLength = 45;
             this.correoenviar.Name = "correoenviar";
             this.correoenviar.Size = new System.Drawing.Size(296, 31);
             this.correoenviar.TabIndex = 84;
+            this.correoenviar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.correoenviar_KeyPress);
             // 
             // label3
             // 
@@ -128,9 +133,11 @@
             // 
             // enviar
             // 
-            this.enviar.Location = new System.Drawing.Point(277, 342);
+            this.enviar.Image = global::InventariosVillaAlegre.Properties.Resources._16__At_;
+            this.enviar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.enviar.Location = new System.Drawing.Point(260, 342);
             this.enviar.Name = "enviar";
-            this.enviar.Size = new System.Drawing.Size(123, 40);
+            this.enviar.Size = new System.Drawing.Size(106, 40);
             this.enviar.TabIndex = 90;
             this.enviar.Text = "Enviar";
             this.enviar.UseVisualStyleBackColor = true;
@@ -159,6 +166,7 @@
             this.Name = "reportesCorreo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Enviar reporte por correo";
+            this.Load += new System.EventHandler(this.reportesCorreo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

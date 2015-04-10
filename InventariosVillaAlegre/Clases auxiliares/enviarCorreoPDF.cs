@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using InventariosVillaAlegre.Clases_auxiliares;
 
 namespace InventariosVillaAlegre
 {
@@ -17,9 +18,12 @@ namespace InventariosVillaAlegre
         public reportesCorreo()
         {
             InitializeComponent();
-            asuntoenviar.Text = "Factura de compra";
+        }
+        private void reportesCorreo_Load(object sender, EventArgs e)
+        {
+            asuntoenviar.Text = valores.Asunto;
             rutaarchivo.Text = valores.nombrepdf;
-            mensaje.Text = "Factura de compra - Gamers";
+            mensaje.Text = valores.Mensaje;
             new ToolTip().SetToolTip(enviar, "Enviar Correo");
             this.ActiveControl = correoenviar;
             correoenviar.Focus();
@@ -27,63 +31,45 @@ namespace InventariosVillaAlegre
 
         private void enviar_Click(object sender, EventArgs e)
         {
-            try
+           if (checarCaracteres.validarcorreo(correoenviar.Text) == true&&validarCampos()==true)
+                {
+                    enviarCorreo.enviarPDF(correoenviar.Text,asuntoenviar.Text,mensaje.Text);
+                     this.Hide();
+                }
+        }
+
+        public Boolean validarCampos() {
+            string campos = "";
+            int validar = 0;
+            if (correoenviar.Text.Length <= 5)
             {
-                if (ComprobarFormatoEmail(correoenviar.Text) == false)
-                {
-                    MessageBox.Show("Formato de correo no valido", "Sistema Gamers", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    Correos Cr = new Correos();
-                    MailMessage mnsj = new MailMessage();
-
-                    mnsj.Subject = valores.nombrepdf;
-
-                    mnsj.To.Add(new MailAddress(correoenviar.Text));
-
-                    mnsj.From = new MailAddress("pabloc.hay@outlook.com", "Sistema Gamers");
-
-                    /* Si deseamos Adjuntar algún archivo*/
-                    mnsj.Attachments.Add(new Attachment(valores.rutapdf));
-
-                    mnsj.Body = mensaje.Text;
-
-                    /* Enviar */
-                    Cr.MandarCorreo(mnsj);
-                    //Enviado = true;
-
-                    MessageBox.Show("Correo Enviado Correctamente", "Sistema Gamers", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                    this.Hide();
-                }
+                validar++;
+                campos += "Correo\n";
             }
-            catch (Exception ex)
+            if (asuntoenviar.Text.Length <= 5)
             {
-                MessageBox.Show("Correo no enviado", "Sistema Gamers", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MessageBox.Show(ex.ToString());
+                validar++;
+                campos += "Asunto\n";
+            }
+            if (validar != 0)
+            {
+                if (validar == 1)
+                    MessageBox.Show("Falta rellenar el campo "+campos);
+                else
+                    MessageBox.Show("Falta rellenar los campos:\n " + campos);
+                return false; 
+            }
+            else 
+            { 
+                return true; 
             }
         }
 
-        public static bool ComprobarFormatoEmail(string sEmailAComprobar)
+        private void correoenviar_KeyPress(object sender, KeyPressEventArgs e)
         {
-            String sFormato;
-            sFormato = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
-            if (Regex.IsMatch(sEmailAComprobar, sFormato))
-            {
-                if (Regex.Replace(sEmailAComprobar, sFormato, String.Empty).Length == 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            else
-            {
-                return false;
-            }
+            e.Handled = checarCaracteres.sinEspacios(e);
         }
+        
 
     }
 }

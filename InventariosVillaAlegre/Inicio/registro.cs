@@ -34,11 +34,11 @@ namespace InventariosVillaAlegre
 
         private void contraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
+            e.Handled = checarCaracteres.sinEspacios(e);
         }
         private void contraseñaconfirmacion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
+            e.Handled = checarCaracteres.sinEspacios(e);
         }
         private void correo_KeyPress(object sender, KeyPressEventArgs e)
         {

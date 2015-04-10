@@ -39,6 +39,7 @@
             // 
             // enviarcontraseña
             // 
+            this.enviarcontraseña.Cursor = System.Windows.Forms.Cursors.Hand;
             this.enviarcontraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.enviarcontraseña.Image = global::InventariosVillaAlegre.Properties.Resources._16__At_;
             this.enviarcontraseña.ImageAlign = System.Drawing.ContentAlignment.TopCenter;

@@ -11,6 +11,25 @@ namespace InventariosVillaAlegre
         private static string opcion = "";
         private static string usuario = "";
         private static string tipo_usuario = "";
+        
+        //variables para el correo
+        private static string mensaje = "";
+        private static string asunto = "";
+        public static string rutapdf, nombrepdf;
+
+
+        public static string Asunto
+        {
+            get { return valores.asunto; }
+            set { valores.asunto = value; }
+        }
+
+
+        public static string Mensaje
+        {
+            get { return valores.mensaje; }
+            set { valores.mensaje = value; }
+        }
 
         public static string Tipo_usuario
         {
@@ -29,9 +48,6 @@ namespace InventariosVillaAlegre
             get { return valores.opcion; }
             set { valores.opcion = value; }
         }
-
-        //variables para el correo
-        public static string rutapdf, nombrepdf;
 
         public static string Nombrepdf
         {

@@ -29,7 +29,7 @@ namespace InventariosVillaAlegre
 
         private void pass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
+            e.Handled = checarCaracteres.sinEspacios(e);
         }
         private void entrar_Click(object sender, EventArgs e)
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using InventariosVillaAlegre.Clases_auxiliares;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -46,7 +47,8 @@ namespace InventariosVillaAlegre
                         String nombre = busquedauser.Tables[0].Rows[0][0].ToString();
                         String contraseña = busquedauser.Tables[0].Rows[0][1].ToString();
                         String correo = busquedauser.Tables[0].Rows[0][2].ToString();
-                        enviar(correo, contraseña, nombre);
+                        if (enviarCorreo.enviarContraseña(correo, contraseña, nombre) == true)
+                            this.Hide();
                     }
                     catch
                     {
@@ -57,24 +59,7 @@ namespace InventariosVillaAlegre
             }
         }
 
-        public void enviar(String correo, String contraseña, String nombre) {
-            encripDatos en = new encripDatos();
-            string body = "¡Hola "+nombre+"! \n Tu clave de acceso es: "+en.desencrip(contraseña)+"\n Residencial villa alegre.\n " + DateTime.Now.ToString("dd / MMM / yyy hh:mm:ss")+"\n Este mensaje fue generado de manera automatica. No responder sobre este mail";
-            var client = new SmtpClient("smtp.gmail.com", 587) {
-                Credentials = new NetworkCredential("villaalegresystem@gmail.com", "R351d3Nc14L"),EnableSsl = true
-            };
-
-            try
-            {
-                client.Send("villaalegresystem@gmail.com", correo, "Recordatorio de contraseña", body);
-                MessageBox.Show("¡Contraseña enviada al correo proporcionado!");
-                this.Hide();
-            }
-            catch
-            {
-                MessageBox.Show("¡Correo no enviado, compruebe su conexion a internet.");
-            }
-        }
+        
         public Boolean validacionCampos()
         {
             int validacion = 0;

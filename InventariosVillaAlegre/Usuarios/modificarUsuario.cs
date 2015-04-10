@@ -19,12 +19,12 @@ namespace InventariosVillaAlegre
             InitializeComponent();
             tipo.SelectedItem = "General";
         }
-        metodosSQL m = new metodosSQL();
-        String nombre1, correo1, contraseña1, contraseñaconfirmacion1, tipo1;
         private void modificarUsuario_Load(object sender, EventArgs e)
         {
             usuario.Focus();
         }
+        metodosSQL m = new metodosSQL();
+        String nombre1, correo1, contraseña1, contraseñaconfirmacion1, tipo1;
 
         private void buscar_Click(object sender, EventArgs e)
         {

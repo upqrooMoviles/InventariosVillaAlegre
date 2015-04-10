@@ -16,7 +16,16 @@ namespace InventariosVillaAlegre
         {
             InitializeComponent();
         }
+        private void eliminarUsuario_Load(object sender, EventArgs e)
+        {
+            usuario.Focus();
+        }
         metodosSQL m = new metodosSQL();
+
+        private void usuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = checarCaracteres.letrasNumerosSinEspacios(e);
+        }
 
         private void buscar_Click(object sender, EventArgs e)
         {
@@ -42,15 +51,14 @@ namespace InventariosVillaAlegre
 
                 }
                 else
-                    MessageBox.Show("Ingrese un usuario valido entre 5 y 10 caracteres!");
+                    MessageBox.Show("¡Ingrese un usuario valido entre 5 y 10 caracteres!");
             }
             else
-                MessageBox.Show("¡No es posible la eliminacion de una cuenta en uso. Debe ser desde una cuenta General distinta");
+                MessageBox.Show("¡No es posible la eliminacion de una cuenta en uso! Debe ser desde una cuenta General distinta.");
         }
 
         private void eliminar_Click(object sender, EventArgs e)
         {
-            metodosSQL m= new metodosSQL();
             Boolean validar=m.eliminar("usuarios", "usuario='"+usuario.Text+"'");
             if (validar == true)
             {
@@ -58,13 +66,13 @@ namespace InventariosVillaAlegre
                 eliminar.Visible = false;
                 buscar.Enabled = true;
                 usuario.Enabled = true;
-                limpiarvalores();
+                limpiarCampos();
             }
             else
-                MessageBox.Show("¡Usuario no eliminado!.\n Intente nuevamente o contacte a su proveedor de software");
+                MessageBox.Show("¡Usuario no eliminado!.\n Intente nuevamente o contacte a su proveedor de software.");
         }
 
-        public void limpiarvalores()
+        public void limpiarCampos()
         {
             tipo.SelectedItem = "General";
             nombre.Text = "";
@@ -74,25 +82,5 @@ namespace InventariosVillaAlegre
             usuario.Focus();
         }
 
-        private void usuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (Char.IsLetter(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsControl(e.KeyChar)) //Al pulsar teclas como Borrar y eso.
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else if (Char.IsNumber(e.KeyChar)) //Al pulsar una letra
-            {
-                e.Handled = false; //Se acepta (todo OK)
-            }
-            else //Para todo lo demas
-            {
-                e.Handled = true; //No se acepta (si pulsas cualquier otra cosa pues no se envia)
-            }
-
-        }
     }
 }

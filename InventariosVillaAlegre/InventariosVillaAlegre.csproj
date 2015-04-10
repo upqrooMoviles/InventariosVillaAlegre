@@ -71,6 +71,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clases auxiliares\enviarCorreo.cs" />
+    <Compile Include="Clases auxiliares\generarPDF.cs" />
     <Compile Include="Usuarios\agregarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>

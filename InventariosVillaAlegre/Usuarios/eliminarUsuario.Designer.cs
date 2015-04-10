@@ -191,6 +191,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "eliminarUsuario";
             this.Text = "eliminarUsuario";
+            this.Load += new System.EventHandler(this.eliminarUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
