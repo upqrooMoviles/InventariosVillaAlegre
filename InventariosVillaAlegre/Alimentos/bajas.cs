@@ -39,6 +39,8 @@ namespace InventariosVillaAlegre
         {
             if (tabControl1.SelectedIndex ==0)
             {
+                tablaProducto.AutoGenerateColumns = false;
+                tablaProducto.Columns.Clear();
                 eliminarP.Enabled = false;
                 claveP.Focus();
                 claveP.Items.Clear();
@@ -81,6 +83,9 @@ namespace InventariosVillaAlegre
             }
             else if (tabControl1.SelectedIndex == 2)
             {
+                tablaMenu.AutoGenerateColumns = false;
+                tablaMenu.Columns.Clear();
+                nombreM.Text = "";
                 eliminarM.Enabled = false;
                 claveM.Focus();
                 claveM.Items.Clear();
