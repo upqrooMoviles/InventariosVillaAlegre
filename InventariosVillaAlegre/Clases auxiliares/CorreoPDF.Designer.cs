@@ -134,6 +134,7 @@
             // 
             // enviar
             // 
+            this.enviar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.enviar.Image = global::InventariosVillaAlegre.Properties.Resources._16__At_;
             this.enviar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.enviar.Location = new System.Drawing.Point(260, 342);

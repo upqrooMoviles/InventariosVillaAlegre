@@ -58,7 +58,7 @@ namespace InventariosVillaAlegre
             string ruta = @"C:\\Reportes\\ListasUsuarios\\";
             string nombrearchivo = "Repote lista usuarios ";
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
-            return generarPDF.TablaPDF(usuarios, nombrearchivo, ruta, "LISTA DE USUARIOS", encabezados, abrir);
+            return generarPDF.tablaPDF(usuarios, nombrearchivo, ruta, "LISTA DE USUARIOS", encabezados, abrir);
 
         }
 
