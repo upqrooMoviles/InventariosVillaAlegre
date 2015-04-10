@@ -31,49 +31,39 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modificaciones));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.claveP = new System.Windows.Forms.ComboBox();
+            this.medidaP = new System.Windows.Forms.ComboBox();
+            this.categoriaP = new System.Windows.Forms.ComboBox();
+            this.existenciaP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.nombreP = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.modificarP = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.claveproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadproducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tipoR = new System.Windows.Forms.ComboBox();
+            this.claveR = new System.Windows.Forms.ComboBox();
+            this.modificarR = new System.Windows.Forms.Button();
+            this.tablaIngredientes = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.nombreR = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.claveM = new System.Windows.Forms.ComboBox();
+            this.modificarM = new System.Windows.Forms.Button();
+            this.nombreM = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.menuSemanal = new System.Windows.Forms.DataGridView();
-            this.Comida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Jueves = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Viernes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sabado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domingo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Lunes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Martes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Miercoles = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tablaMenu = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaIngredientes)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuSemanal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -87,22 +77,23 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1052, 542);
             this.tabControl1.TabIndex = 3;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.Transparent;
             this.tabPage1.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.tabPage1.Controls.Add(this.textBox5);
+            this.tabPage1.Controls.Add(this.claveP);
+            this.tabPage1.Controls.Add(this.medidaP);
+            this.tabPage1.Controls.Add(this.categoriaP);
+            this.tabPage1.Controls.Add(this.existenciaP);
             this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.textBox4);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.textBox3);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.textBox2);
+            this.tabPage1.Controls.Add(this.nombreP);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.button1);
+            this.tabPage1.Controls.Add(this.modificarP);
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -110,13 +101,67 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Productos";
             // 
-            // textBox5
+            // claveP
             // 
-            this.textBox5.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox5.Location = new System.Drawing.Point(516, 330);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(306, 28);
-            this.textBox5.TabIndex = 15;
+            this.claveP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.claveP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.claveP.FormattingEnabled = true;
+            this.claveP.Location = new System.Drawing.Point(516, 49);
+            this.claveP.Name = "claveP";
+            this.claveP.Size = new System.Drawing.Size(144, 25);
+            this.claveP.TabIndex = 20;
+            this.claveP.SelectedIndexChanged += new System.EventHandler(this.claveP_SelectedIndexChanged);
+            // 
+            // medidaP
+            // 
+            this.medidaP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.medidaP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.medidaP.Enabled = false;
+            this.medidaP.FormattingEnabled = true;
+            this.medidaP.Items.AddRange(new object[] {
+            "GRAMOS",
+            "KILOS",
+            "LITROS",
+            "MILIGRAMOS",
+            "MILILITROS",
+            "ONZAS",
+            "PIEZAS"});
+            this.medidaP.Location = new System.Drawing.Point(516, 260);
+            this.medidaP.Name = "medidaP";
+            this.medidaP.Size = new System.Drawing.Size(152, 25);
+            this.medidaP.TabIndex = 19;
+            // 
+            // categoriaP
+            // 
+            this.categoriaP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.categoriaP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoriaP.Enabled = false;
+            this.categoriaP.FormattingEnabled = true;
+            this.categoriaP.Items.AddRange(new object[] {
+            "CARNES, PESCADOS Y HUEVOS",
+            "CEREALES Y DERIVADOS, AZÚCAR Y DULCES",
+            "FRUTAS",
+            "GRASAS, ACEITE Y MANTEQUILLA",
+            "LECHE Y DERIVADOS",
+            "OTROS",
+            "PATATAS, LEGUMBRES Y FRUTOS SECOS",
+            "VERDURAS Y HORTALIZAS"});
+            this.categoriaP.Location = new System.Drawing.Point(516, 194);
+            this.categoriaP.Name = "categoriaP";
+            this.categoriaP.Size = new System.Drawing.Size(306, 25);
+            this.categoriaP.TabIndex = 18;
+            // 
+            // existenciaP
+            // 
+            this.existenciaP.Enabled = false;
+            this.existenciaP.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.existenciaP.Location = new System.Drawing.Point(516, 330);
+            this.existenciaP.MaxLength = 6;
+            this.existenciaP.Name = "existenciaP";
+            this.existenciaP.ShortcutsEnabled = false;
+            this.existenciaP.Size = new System.Drawing.Size(152, 28);
+            this.existenciaP.TabIndex = 15;
+            this.existenciaP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.existenciaP_KeyPress);
             // 
             // label5
             // 
@@ -128,14 +173,6 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Existencia actual del producto:";
             // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox4.Location = new System.Drawing.Point(516, 256);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(306, 28);
-            this.textBox4.TabIndex = 13;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -145,14 +182,6 @@
             this.label4.Size = new System.Drawing.Size(234, 24);
             this.label4.TabIndex = 12;
             this.label4.Text = "Médida del producto:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox3.Location = new System.Drawing.Point(516, 190);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(306, 28);
-            this.textBox3.TabIndex = 11;
             // 
             // label3
             // 
@@ -164,13 +193,17 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Categoría del producto:";
             // 
-            // textBox2
+            // nombreP
             // 
-            this.textBox2.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox2.Location = new System.Drawing.Point(516, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(306, 28);
-            this.textBox2.TabIndex = 9;
+            this.nombreP.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombreP.Enabled = false;
+            this.nombreP.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.nombreP.Location = new System.Drawing.Point(516, 120);
+            this.nombreP.MaxLength = 45;
+            this.nombreP.Name = "nombreP";
+            this.nombreP.Size = new System.Drawing.Size(306, 28);
+            this.nombreP.TabIndex = 9;
+            this.nombreP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreP_KeyPress);
             // 
             // label2
             // 
@@ -182,14 +215,6 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Nombre del producto:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox1.Location = new System.Drawing.Point(516, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(306, 28);
-            this.textBox1.TabIndex = 7;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -200,25 +225,30 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Clave del producto:";
             // 
-            // button1
+            // modificarP
             // 
-            this.button1.Location = new System.Drawing.Point(440, 434);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 37);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Modificar producto";
-            this.button1.UseVisualStyleBackColor = true;
+            this.modificarP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modificarP.Enabled = false;
+            this.modificarP.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
+            this.modificarP.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.modificarP.Location = new System.Drawing.Point(440, 434);
+            this.modificarP.Name = "modificarP";
+            this.modificarP.Size = new System.Drawing.Size(165, 37);
+            this.modificarP.TabIndex = 5;
+            this.modificarP.Text = "Modificar producto";
+            this.modificarP.UseVisualStyleBackColor = true;
+            this.modificarP.Click += new System.EventHandler(this.modificarP_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.tabPage2.Controls.Add(this.button2);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.tipoR);
+            this.tabPage2.Controls.Add(this.claveR);
+            this.tabPage2.Controls.Add(this.modificarR);
+            this.tabPage2.Controls.Add(this.tablaIngredientes);
             this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.textBox6);
+            this.tabPage2.Controls.Add(this.nombreR);
             this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.textBox7);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
@@ -228,46 +258,59 @@
             this.tabPage2.Text = "Recetas";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // tipoR
             // 
-            this.button2.Location = new System.Drawing.Point(229, 235);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(165, 37);
-            this.button2.TabIndex = 17;
-            this.button2.Text = "Modificar receta";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tipoR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tipoR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.tipoR.Enabled = false;
+            this.tipoR.FormattingEnabled = true;
+            this.tipoR.Items.AddRange(new object[] {
+            "DESAYUNO",
+            "COMIDA",
+            "CENA",
+            "GENERAL"});
+            this.tipoR.Location = new System.Drawing.Point(252, 153);
+            this.tipoR.Name = "tipoR";
+            this.tipoR.Size = new System.Drawing.Size(182, 25);
+            this.tipoR.TabIndex = 22;
             // 
-            // dataGridView2
+            // claveR
             // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.claveproducto,
-            this.cantidadproducto});
-            this.dataGridView2.Location = new System.Drawing.Point(614, 39);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(400, 439);
-            this.dataGridView2.TabIndex = 16;
+            this.claveR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.claveR.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.claveR.FormattingEnabled = true;
+            this.claveR.Location = new System.Drawing.Point(252, 43);
+            this.claveR.Name = "claveR";
+            this.claveR.Size = new System.Drawing.Size(241, 25);
+            this.claveR.TabIndex = 21;
+            this.claveR.SelectedIndexChanged += new System.EventHandler(this.claveR_SelectedIndexChanged);
             // 
-            // claveproducto
+            // modificarR
             // 
-            this.claveproducto.HeaderText = "Clave del producto";
-            this.claveproducto.Name = "claveproducto";
-            this.claveproducto.Width = 150;
+            this.modificarR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modificarR.Enabled = false;
+            this.modificarR.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
+            this.modificarR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.modificarR.Location = new System.Drawing.Point(229, 235);
+            this.modificarR.Name = "modificarR";
+            this.modificarR.Size = new System.Drawing.Size(165, 37);
+            this.modificarR.TabIndex = 17;
+            this.modificarR.Text = "Modificar receta";
+            this.modificarR.UseVisualStyleBackColor = true;
+            this.modificarR.Click += new System.EventHandler(this.modificarR_Click);
             // 
-            // cantidadproducto
+            // tablaIngredientes
             // 
-            this.cantidadproducto.HeaderText = "Cantidad";
-            this.cantidadproducto.Name = "cantidadproducto";
-            this.cantidadproducto.Width = 200;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(252, 153);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(306, 25);
-            this.comboBox1.TabIndex = 15;
+            this.tablaIngredientes.AllowUserToAddRows = false;
+            this.tablaIngredientes.AllowUserToDeleteRows = false;
+            this.tablaIngredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tablaIngredientes.BackgroundColor = System.Drawing.Color.White;
+            this.tablaIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaIngredientes.Enabled = false;
+            this.tablaIngredientes.Location = new System.Drawing.Point(614, 39);
+            this.tablaIngredientes.Name = "tablaIngredientes";
+            this.tablaIngredientes.Size = new System.Drawing.Size(400, 439);
+            this.tablaIngredientes.TabIndex = 16;
             // 
             // label8
             // 
@@ -279,13 +322,17 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Tipo de alimento:";
             // 
-            // textBox6
+            // nombreR
             // 
-            this.textBox6.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox6.Location = new System.Drawing.Point(252, 95);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(306, 28);
-            this.textBox6.TabIndex = 13;
+            this.nombreR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombreR.Enabled = false;
+            this.nombreR.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.nombreR.Location = new System.Drawing.Point(252, 95);
+            this.nombreR.MaxLength = 45;
+            this.nombreR.Name = "nombreR";
+            this.nombreR.Size = new System.Drawing.Size(306, 28);
+            this.nombreR.TabIndex = 13;
+            this.nombreR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreR_KeyPress);
             // 
             // label6
             // 
@@ -296,14 +343,6 @@
             this.label6.Size = new System.Drawing.Size(234, 24);
             this.label6.TabIndex = 12;
             this.label6.Text = "Nombre de la receta:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox7.Location = new System.Drawing.Point(252, 39);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(306, 28);
-            this.textBox7.TabIndex = 11;
             // 
             // label7
             // 
@@ -318,12 +357,12 @@
             // tabPage3
             // 
             this.tabPage3.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
-            this.tabPage3.Controls.Add(this.button3);
-            this.tabPage3.Controls.Add(this.textBox8);
+            this.tabPage3.Controls.Add(this.claveM);
+            this.tabPage3.Controls.Add(this.modificarM);
+            this.tabPage3.Controls.Add(this.nombreM);
             this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.textBox9);
             this.tabPage3.Controls.Add(this.label10);
-            this.tabPage3.Controls.Add(this.menuSemanal);
+            this.tabPage3.Controls.Add(this.tablaMenu);
             this.tabPage3.Location = new System.Drawing.Point(4, 26);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -332,22 +371,42 @@
             this.tabPage3.Text = "Menús";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // claveM
             // 
-            this.button3.Location = new System.Drawing.Point(440, 412);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 37);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "Modificar menú";
-            this.button3.UseVisualStyleBackColor = true;
+            this.claveM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.claveM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.claveM.FormattingEnabled = true;
+            this.claveM.Location = new System.Drawing.Point(475, 36);
+            this.claveM.Name = "claveM";
+            this.claveM.Size = new System.Drawing.Size(241, 25);
+            this.claveM.TabIndex = 22;
+            this.claveM.SelectedIndexChanged += new System.EventHandler(this.claveM_SelectedIndexChanged);
             // 
-            // textBox8
+            // modificarM
             // 
-            this.textBox8.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox8.Location = new System.Drawing.Point(475, 107);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(306, 28);
-            this.textBox8.TabIndex = 13;
+            this.modificarM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modificarM.Enabled = false;
+            this.modificarM.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
+            this.modificarM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.modificarM.Location = new System.Drawing.Point(440, 412);
+            this.modificarM.Name = "modificarM";
+            this.modificarM.Size = new System.Drawing.Size(165, 37);
+            this.modificarM.TabIndex = 18;
+            this.modificarM.Text = "Modificar menú";
+            this.modificarM.UseVisualStyleBackColor = true;
+            this.modificarM.Click += new System.EventHandler(this.modificarM_Click);
+            // 
+            // nombreM
+            // 
+            this.nombreM.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.nombreM.Enabled = false;
+            this.nombreM.Font = new System.Drawing.Font("Century Gothic", 12.75F);
+            this.nombreM.Location = new System.Drawing.Point(475, 107);
+            this.nombreM.MaxLength = 45;
+            this.nombreM.Name = "nombreM";
+            this.nombreM.Size = new System.Drawing.Size(306, 28);
+            this.nombreM.TabIndex = 13;
+            this.nombreM.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.nombreM_KeyPress);
             // 
             // label9
             // 
@@ -359,14 +418,6 @@
             this.label9.TabIndex = 12;
             this.label9.Text = "Nombre del menú:";
             // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Century Gothic", 12.75F);
-            this.textBox9.Location = new System.Drawing.Point(475, 37);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(306, 28);
-            this.textBox9.TabIndex = 11;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -377,72 +428,21 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Clave del menú:";
             // 
-            // menuSemanal
+            // tablaMenu
             // 
-            this.menuSemanal.BackgroundColor = System.Drawing.Color.White;
-            this.menuSemanal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.menuSemanal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Comida,
-            this.Jueves,
-            this.Viernes,
-            this.Sabado,
-            this.Domingo,
-            this.Lunes,
-            this.Martes,
-            this.Miercoles});
-            this.menuSemanal.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuSemanal.Location = new System.Drawing.Point(6, 176);
-            this.menuSemanal.Name = "menuSemanal";
-            this.menuSemanal.Size = new System.Drawing.Size(1032, 160);
-            this.menuSemanal.TabIndex = 5;
-            // 
-            // Comida
-            // 
-            this.Comida.HeaderText = "Comida";
-            this.Comida.Name = "Comida";
-            this.Comida.Width = 140;
-            // 
-            // Jueves
-            // 
-            this.Jueves.HeaderText = "Jueves";
-            this.Jueves.Name = "Jueves";
-            this.Jueves.Width = 120;
-            // 
-            // Viernes
-            // 
-            this.Viernes.HeaderText = "Viernes";
-            this.Viernes.Name = "Viernes";
-            this.Viernes.Width = 120;
-            // 
-            // Sabado
-            // 
-            this.Sabado.HeaderText = "Sabado";
-            this.Sabado.Name = "Sabado";
-            this.Sabado.Width = 120;
-            // 
-            // Domingo
-            // 
-            this.Domingo.HeaderText = "Domingo";
-            this.Domingo.Name = "Domingo";
-            this.Domingo.Width = 120;
-            // 
-            // Lunes
-            // 
-            this.Lunes.HeaderText = "Lunes";
-            this.Lunes.Name = "Lunes";
-            this.Lunes.Width = 120;
-            // 
-            // Martes
-            // 
-            this.Martes.HeaderText = "Martes";
-            this.Martes.Name = "Martes";
-            this.Martes.Width = 120;
-            // 
-            // Miercoles
-            // 
-            this.Miercoles.HeaderText = "Miercoles";
-            this.Miercoles.Name = "Miercoles";
-            this.Miercoles.Width = 120;
+            this.tablaMenu.AllowUserToAddRows = false;
+            this.tablaMenu.AllowUserToDeleteRows = false;
+            this.tablaMenu.AllowUserToOrderColumns = true;
+            this.tablaMenu.AllowUserToResizeColumns = false;
+            this.tablaMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tablaMenu.BackgroundColor = System.Drawing.Color.White;
+            this.tablaMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaMenu.Enabled = false;
+            this.tablaMenu.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tablaMenu.Location = new System.Drawing.Point(6, 176);
+            this.tablaMenu.Name = "tablaMenu";
+            this.tablaMenu.Size = new System.Drawing.Size(1032, 160);
+            this.tablaMenu.TabIndex = 5;
             // 
             // modificaciones
             // 
@@ -457,15 +457,16 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "modificaciones";
             this.Text = "modificaciones";
+            this.Load += new System.EventHandler(this.modificaciones_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaIngredientes)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.menuSemanal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,43 +475,33 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox existenciaP;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox nombreP;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button modificarP;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn claveproducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidadproducto;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button modificarR;
+        private System.Windows.Forms.DataGridView tablaIngredientes;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox nombreR;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button modificarM;
+        private System.Windows.Forms.TextBox nombreM;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView menuSemanal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Jueves;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Viernes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sabado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Domingo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lunes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Martes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Miercoles;
+        private System.Windows.Forms.DataGridView tablaMenu;
+        private System.Windows.Forms.ComboBox medidaP;
+        private System.Windows.Forms.ComboBox categoriaP;
+        private System.Windows.Forms.ComboBox claveP;
+        private System.Windows.Forms.ComboBox claveR;
+        private System.Windows.Forms.ComboBox tipoR;
+        private System.Windows.Forms.ComboBox claveM;
 
     }
 }
