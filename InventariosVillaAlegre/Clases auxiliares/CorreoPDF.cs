@@ -22,7 +22,7 @@ namespace InventariosVillaAlegre
         private void reportesCorreo_Load(object sender, EventArgs e)
         {
             asuntoenviar.Text = valores.Asunto;
-            rutaarchivo.Text = valores.nombrepdf;
+            rutaarchivo.Text = valores.Nombrepdf;
             mensaje.Text = valores.Mensaje;
             new ToolTip().SetToolTip(enviar, "Enviar Correo");
             this.ActiveControl = correoenviar;
@@ -33,8 +33,11 @@ namespace InventariosVillaAlegre
         {
            if (checarCaracteres.validarcorreo(correoenviar.Text) == true&&validarCampos()==true)
                 {
-                    enviarCorreo.enviarPDF(correoenviar.Text,asuntoenviar.Text,mensaje.Text);
+                    enviar.Enabled = false;
+                    if(enviarCorreo.enviarPDF(correoenviar.Text,asuntoenviar.Text,mensaje.Text)==true)
                      this.Hide();
+                    else
+                        enviar.Enabled = true;
                 }
         }
 

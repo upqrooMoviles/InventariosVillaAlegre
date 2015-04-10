@@ -83,6 +83,7 @@
             // correoenviar
             // 
             this.correoenviar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.correoenviar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.correoenviar.Location = new System.Drawing.Point(104, 91);
             this.correoenviar.MaxLength = 45;
             this.correoenviar.Name = "correoenviar";

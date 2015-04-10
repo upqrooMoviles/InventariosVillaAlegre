@@ -99,7 +99,6 @@
     </Compile>
     <Compile Include="Clases auxiliares\checarCaracteres.cs" />
     <Compile Include="MySQL\conexion.cs" />
-    <Compile Include="Clases auxiliares\correos.cs" />
     <Compile Include="Usuarios\eliminarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,11 +175,11 @@
     <Compile Include="Alimentos\reportes.Designer.cs">
       <DependentUpon>reportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clases auxiliares\enviarCorreoPDF.cs">
+    <Compile Include="Clases auxiliares\CorreoPDF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clases auxiliares\enviarCorreoPDF.Designer.cs">
-      <DependentUpon>enviarCorreoPDF.cs</DependentUpon>
+    <Compile Include="Clases auxiliares\CorreoPDF.Designer.cs">
+      <DependentUpon>CorreoPDF.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuarios\usuarios.cs">
       <SubType>Form</SubType>
@@ -247,8 +246,8 @@
     <EmbeddedResource Include="Alimentos\reportes.resx">
       <DependentUpon>reportes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Clases auxiliares\enviarCorreoPDF.resx">
-      <DependentUpon>enviarCorreoPDF.cs</DependentUpon>
+    <EmbeddedResource Include="Clases auxiliares\CorreoPDF.resx">
+      <DependentUpon>CorreoPDF.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\usuarios.resx">
       <DependentUpon>usuarios.cs</DependentUpon>

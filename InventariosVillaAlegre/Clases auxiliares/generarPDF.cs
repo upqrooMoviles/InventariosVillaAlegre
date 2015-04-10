@@ -15,7 +15,7 @@ namespace InventariosVillaAlegre.Clases_auxiliares
 {
     class generarPDF
     {
-        public static Boolean TablaPDF(DataGridView datos, string nombreArchivo, string ruta, string encabezado, string []encabezados) {
+        public static Boolean TablaPDF(DataGridView datos, string nombreArchivo, string ruta, string encabezado, string []encabezados, Boolean abrir) {
             DateTime hora = DateTime.Now;
             string fcha_ttal = Convert.ToDateTime(hora).Day + "/" + Convert.ToDateTime(hora).Month + "/" + Convert.ToDateTime(hora).Year;
             Document doc = new Document(PageSize.A4, 9, 9, 10, 10);
@@ -23,31 +23,40 @@ namespace InventariosVillaAlegre.Clases_auxiliares
             string fecha = DateTime.Now.ToString("yyyy-MM-dd");
             string formato = ".pdf";
             string filename = Path.Combine(ruta + guion + nombreArchivo + fecha + formato);
-            valores.rutapdf = ruta + guion + nombreArchivo + fecha + formato;
-            valores.nombrepdf = nombreArchivo + fecha + formato;
-            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo.png");
+            valores.Rutapdf = ruta + guion + nombreArchivo + fecha + formato;
+            valores.Nombrepdf = nombreArchivo + fecha + formato;
+            iTextSharp.text.Image jpg = iTextSharp.text.Image.GetInstance(@".../.../resources/logo-villa-alegre.png");
             jpg.Alignment = Element.ALIGN_CENTER;
-            jpg.ScaleAbsolute(300f, 43f);
-
-            Chunk encab = new Chunk(encabezado+"\n " + fecha + "\n", FontFactory.GetFont("TIMES_ROMAN", 12));
+            jpg.ScaleAbsolute(265f, 78f);
+            Chunk encab = new Chunk(encabezado + "\n " + fecha + "\n", FontFactory.GetFont("TIMES_BOLDITALIC", 16));
             try
             {
-                FileStream file = new FileStream
-                (filename, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
-                PdfWriter.GetInstance(doc, file);
-                doc.Open();
 
-                doc.Add(new Paragraph(encab));
-                doc.Add(jpg);
-
-                PdfPTable tabla = generarTabla(encabezados);
-                doc.Add(tabla);
-                doc.Add(new Paragraph("\n\n"));
-                generarDocumento(doc, datos);
-                Process.Start(filename);
-                doc.Close();
-                MessageBox.Show("Archivo PDF Generado");
-                //doc.Open();
+                if (abrir == true)
+                {
+                    FileStream file = new FileStream
+                    (filename, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+                    PdfWriter.GetInstance(doc, file);
+                    doc.Open();
+                    doc.Add(new Paragraph(encab));
+                    doc.Add(jpg);
+                    doc.Add(new Paragraph("\n\n"));
+                    generarDocumento(doc, datos);
+                    Process.Start(filename);
+                    doc.Close();
+                }
+                else
+                {
+                    PdfWriter writer = PdfWriter.GetInstance(doc,
+                            new FileStream(filename, FileMode.Create));
+                    doc.Open();
+                    doc.Add(new Paragraph(encab));
+                    doc.Add(jpg);
+                    doc.Add(new Paragraph("\n\n"));
+                    generarDocumento(doc, datos);
+                    doc.Close();
+                    writer.Close();
+                }
                 return true;
             }
             catch 
@@ -56,25 +65,6 @@ namespace InventariosVillaAlegre.Clases_auxiliares
                 return false;
             }
 
-        }
-        public static PdfPTable generarTabla(string [] encabezados)
-        {
-            PdfPTable unaTabla = new PdfPTable(2);
-            unaTabla.SetWidthPercentage(new float[] { 300, 300 }, PageSize.A4);
-            //Headers
-            for (int i = 0; i < encabezados.Length; i++)
-            {
-                unaTabla.AddCell(new Paragraph(encabezados[i]));
-            }
-
-            //¿Le damos un poco de formato?
-            foreach (PdfPCell celda in unaTabla.Rows[0].GetCells())
-            {
-                celda.BackgroundColor = BaseColor.LIGHT_GRAY;
-                celda.HorizontalAlignment = 1;
-                celda.Padding = 3;
-            }
-            return unaTabla;
         }
         public static void generarDocumento(Document document, DataGridView datos)
         {
@@ -101,6 +91,14 @@ namespace InventariosVillaAlegre.Clases_auxiliares
                 datatable.HorizontalAlignment = Element.ALIGN_CENTER;
                 datatable.AddCell(objP);
             }
+
+            foreach (PdfPCell celda in datatable.Rows[0].GetCells())
+            {
+                celda.BackgroundColor = BaseColor.LIGHT_GRAY;
+                celda.HorizontalAlignment = 1;
+                celda.Padding = 3;
+            }
+
             datatable.HeaderRows = 1;
             datatable.DefaultCell.BorderWidth = 1;
 

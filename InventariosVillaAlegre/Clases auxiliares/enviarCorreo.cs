@@ -46,12 +46,11 @@ namespace InventariosVillaAlegre.Clases_auxiliares
         {
             try
             {
-                Correos Cr = new Correos();
                 MailMessage mnsj = new MailMessage();
                 mnsj.Subject = asunto;
                 mnsj.To.Add(new MailAddress(correo));
                 mnsj.From = new MailAddress("villaalegresystem@gmail.com", "Sistema villa alegre");
-                mnsj.Attachments.Add(new Attachment(valores.rutapdf));
+                mnsj.Attachments.Add(new Attachment(valores.Rutapdf));
                 mnsj.Body = mensaje + "\nEste mensaje fue generado de manera automatica. No responder sobre este mail";
                 credenciales().Send(mnsj);
                 MessageBox.Show("Correo Enviado Correctamente");
