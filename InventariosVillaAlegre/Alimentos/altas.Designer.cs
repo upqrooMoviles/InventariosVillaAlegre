@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.altaP = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.listaIngredientes = new System.Windows.Forms.RichTextBox();
             this.finalizarR = new System.Windows.Forms.Button();
             this.cantidadingrediente = new System.Windows.Forms.TextBox();
             this.labelMedida = new System.Windows.Forms.Label();
@@ -65,7 +66,6 @@
             this.claveM = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.menuSemanal = new System.Windows.Forms.DataGridView();
-            this.listaIngredientes = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -269,6 +269,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Recetas";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // listaIngredientes
+            // 
+            this.listaIngredientes.Enabled = false;
+            this.listaIngredientes.Location = new System.Drawing.Point(601, 227);
+            this.listaIngredientes.Name = "listaIngredientes";
+            this.listaIngredientes.Size = new System.Drawing.Size(297, 273);
+            this.listaIngredientes.TabIndex = 27;
+            this.listaIngredientes.Text = "";
             // 
             // finalizarR
             // 
@@ -528,20 +537,12 @@
             this.menuSemanal.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.menuSemanal.BackgroundColor = System.Drawing.Color.White;
             this.menuSemanal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.menuSemanal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuSemanal.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menuSemanal.Location = new System.Drawing.Point(164, 173);
             this.menuSemanal.Name = "menuSemanal";
             this.menuSemanal.Size = new System.Drawing.Size(704, 275);
             this.menuSemanal.TabIndex = 5;
-            // 
-            // listaIngredientes
-            // 
-            this.listaIngredientes.Enabled = false;
-            this.listaIngredientes.Location = new System.Drawing.Point(601, 227);
-            this.listaIngredientes.Name = "listaIngredientes";
-            this.listaIngredientes.Size = new System.Drawing.Size(297, 273);
-            this.listaIngredientes.TabIndex = 27;
-            this.listaIngredientes.Text = "";
             // 
             // altas
             // 
