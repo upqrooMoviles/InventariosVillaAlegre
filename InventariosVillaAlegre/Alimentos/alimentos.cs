@@ -31,7 +31,6 @@ namespace InventariosVillaAlegre
                 modificaciones.Visible = true;
             }
 
-            //tabControl1.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -39,7 +38,7 @@ namespace InventariosVillaAlegre
             hora.Text = DateTime.Now.ToLongTimeString(); 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void menualimentos_Click(object sender, EventArgs e)
         {
             if (this.contenedor.Controls.Count!=0)
                 this.contenedor.Controls.RemoveAt(0);

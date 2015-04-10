@@ -39,5 +39,10 @@ namespace InventariosVillaAlegre
             ss.Show();
             this.Hide();
         }
+
+        private void principal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

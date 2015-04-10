@@ -18,6 +18,24 @@ namespace InventariosVillaAlegre
             else 
                 return false;
         }
+        public static Boolean soloNumeros(KeyPressEventArgs e)
+        {
+
+            if (Char.IsNumber(e.KeyChar))
+                return false;
+            else
+                return true;
+        }
+        public static Boolean numerosDecimales(KeyPressEventArgs e)
+        {
+
+            if (Char.IsNumber(e.KeyChar))
+                return false;
+            else if (e.KeyChar.Equals('.'))
+                return false;
+            else
+                return true;
+        }
 
         public static Boolean letrasNumerosSinEspacios(KeyPressEventArgs e)
         {

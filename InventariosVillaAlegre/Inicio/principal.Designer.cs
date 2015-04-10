@@ -108,6 +108,7 @@
             this.Name = "principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sistema de inventario - Villa Alegre";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.principal_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.alimentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarios)).EndInit();

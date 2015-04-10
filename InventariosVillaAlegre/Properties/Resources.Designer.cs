@@ -63,6 +63,16 @@ namespace InventariosVillaAlegre.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _16__Address_book_ {
+            get {
+                object obj = ResourceManager.GetObject("16 (Address book)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _16__Align_full_4_ {
             get {
                 object obj = ResourceManager.GetObject("16 (Align full-4)", resourceCulture);

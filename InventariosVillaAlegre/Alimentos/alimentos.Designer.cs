@@ -200,6 +200,7 @@
             // 
             // reportes
             // 
+            this.reportes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.reportes.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportes.Image = global::InventariosVillaAlegre.Properties.Resources._16__Header_first_;
             this.reportes.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -213,6 +214,7 @@
             // 
             // modificaciones
             // 
+            this.modificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.modificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modificaciones.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
             this.modificaciones.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -227,6 +229,7 @@
             // 
             // bajas
             // 
+            this.bajas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bajas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bajas.Image = global::InventariosVillaAlegre.Properties.Resources._16__Minus_over_;
             this.bajas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -241,6 +244,7 @@
             // 
             // altas
             // 
+            this.altas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.altas.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altas.Image = global::InventariosVillaAlegre.Properties.Resources._16__Plus_favorites_;
             this.altas.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -255,6 +259,7 @@
             // 
             // inventario
             // 
+            this.inventario.Cursor = System.Windows.Forms.Cursors.Hand;
             this.inventario.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inventario.Image = global::InventariosVillaAlegre.Properties.Resources._16__Bullets_and_numbering_;
             this.inventario.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -268,6 +273,7 @@
             // 
             // menualimentos
             // 
+            this.menualimentos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menualimentos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menualimentos.Image = global::InventariosVillaAlegre.Properties.Resources._16__Grid_split_cells_;
             this.menualimentos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -277,7 +283,7 @@
             this.menualimentos.TabIndex = 0;
             this.menualimentos.Text = "Menus";
             this.menualimentos.UseVisualStyleBackColor = true;
-            this.menualimentos.Click += new System.EventHandler(this.button1_Click);
+            this.menualimentos.Click += new System.EventHandler(this.menualimentos_Click);
             // 
             // contenedor
             // 
