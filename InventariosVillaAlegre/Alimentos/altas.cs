@@ -133,7 +133,7 @@ namespace InventariosVillaAlegre
                     if (m.insertar("alimentos", "idalimentos, producto, categoria, medida, existencia", valoresCampos) == true)
                     {
                         MessageBox.Show("¡Registro insertado con exito!");
-                        limpiarCampos();
+                        limpiarCamposP();
                     }
                     else
                         MessageBox.Show("¡Registro no insertado, intente de nuevo o contacte al proovedor de software!");
@@ -332,7 +332,7 @@ namespace InventariosVillaAlegre
             }
         }
         
-        public void limpiarCampos()
+        public void limpiarCamposP()
         {
             categoriaP.SelectedItem = "CARNES, PESCADOS Y HUEVOS";
             medidaP.SelectedItem = "GRAMOS";

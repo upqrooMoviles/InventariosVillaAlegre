@@ -15,6 +15,8 @@ namespace InventariosVillaAlegre
             
         if (Char.IsNumber(e.KeyChar)) 
                 return true;
+        else if (Char.IsControl(e.KeyChar))
+            return false; 
             else 
                 return false;
         }
@@ -23,6 +25,8 @@ namespace InventariosVillaAlegre
 
             if (Char.IsNumber(e.KeyChar))
                 return false;
+            else if (Char.IsControl(e.KeyChar))
+                return false; 
             else
                 return true;
         }
@@ -33,6 +37,8 @@ namespace InventariosVillaAlegre
                 return false;
             else if (e.KeyChar.Equals('.'))
                 return false;
+            else if (Char.IsControl(e.KeyChar))
+                return false; 
             else
                 return true;
         }

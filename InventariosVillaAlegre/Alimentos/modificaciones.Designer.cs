@@ -301,8 +301,6 @@
             // 
             // tablaIngredientes
             // 
-            this.tablaIngredientes.AllowUserToAddRows = false;
-            this.tablaIngredientes.AllowUserToDeleteRows = false;
             this.tablaIngredientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.tablaIngredientes.BackgroundColor = System.Drawing.Color.White;
             this.tablaIngredientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -388,7 +386,7 @@
             this.modificarM.Enabled = false;
             this.modificarM.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_edit_;
             this.modificarM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.modificarM.Location = new System.Drawing.Point(440, 412);
+            this.modificarM.Location = new System.Drawing.Point(475, 441);
             this.modificarM.Name = "modificarM";
             this.modificarM.Size = new System.Drawing.Size(165, 37);
             this.modificarM.TabIndex = 18;
@@ -439,9 +437,9 @@
             this.tablaMenu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaMenu.Enabled = false;
             this.tablaMenu.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tablaMenu.Location = new System.Drawing.Point(6, 176);
+            this.tablaMenu.Location = new System.Drawing.Point(93, 176);
             this.tablaMenu.Name = "tablaMenu";
-            this.tablaMenu.Size = new System.Drawing.Size(1032, 160);
+            this.tablaMenu.Size = new System.Drawing.Size(818, 243);
             this.tablaMenu.TabIndex = 5;
             // 
             // modificaciones
