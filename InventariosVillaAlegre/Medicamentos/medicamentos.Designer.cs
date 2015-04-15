@@ -30,17 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(medicamentos));
-            this.contenido = new System.Windows.Forms.Panel();
+            this.contenedor = new System.Windows.Forms.Panel();
             this.menu = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
+            this.modificarR = new System.Windows.Forms.Button();
+            this.buscarM = new System.Windows.Forms.Button();
             this.agregarM = new System.Windows.Forms.Button();
             this.eliminarM = new System.Windows.Forms.Button();
-            this.actualizar = new System.Windows.Forms.Button();
+            this.actualizarM = new System.Windows.Forms.Button();
             this.eliminarR = new System.Windows.Forms.Button();
             this.agregarR = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.listaM = new System.Windows.Forms.Button();
+            this.fichaR = new System.Windows.Forms.Button();
+            this.listaR = new System.Windows.Forms.Button();
             this.baner = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -58,147 +59,189 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // contenido
+            // contenedor
             // 
-            this.contenido.BackColor = System.Drawing.Color.Transparent;
-            this.contenido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.contenido.Location = new System.Drawing.Point(207, 127);
-            this.contenido.Name = "contenido";
-            this.contenido.Size = new System.Drawing.Size(940, 489);
-            this.contenido.TabIndex = 9;
+            this.contenedor.BackColor = System.Drawing.Color.Transparent;
+            this.contenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.contenedor.Location = new System.Drawing.Point(226, 127);
+            this.contenedor.Name = "contenedor";
+            this.contenedor.Size = new System.Drawing.Size(921, 489);
+            this.contenedor.TabIndex = 9;
             // 
             // menu
             // 
             this.menu.BackColor = System.Drawing.Color.Transparent;
             this.menu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menu.Controls.Add(this.button9);
+            this.menu.Controls.Add(this.modificarR);
+            this.menu.Controls.Add(this.buscarM);
             this.menu.Controls.Add(this.agregarM);
             this.menu.Controls.Add(this.eliminarM);
-            this.menu.Controls.Add(this.actualizar);
+            this.menu.Controls.Add(this.actualizarM);
             this.menu.Controls.Add(this.eliminarR);
             this.menu.Controls.Add(this.agregarR);
-            this.menu.Controls.Add(this.button4);
-            this.menu.Controls.Add(this.button3);
-            this.menu.Controls.Add(this.button1);
+            this.menu.Controls.Add(this.listaM);
+            this.menu.Controls.Add(this.fichaR);
+            this.menu.Controls.Add(this.listaR);
             this.menu.Location = new System.Drawing.Point(1, 127);
             this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(200, 486);
+            this.menu.Size = new System.Drawing.Size(219, 486);
             this.menu.TabIndex = 8;
             // 
-            // button9
+            // modificarR
             // 
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Image = global::InventariosVillaAlegre.Properties.Resources._16__Searchnext_;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button9.Location = new System.Drawing.Point(-1, 54);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(200, 49);
-            this.button9.TabIndex = 8;
-            this.button9.Text = "Buscar medicamento";
-            this.button9.UseVisualStyleBackColor = true;
+            this.modificarR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.modificarR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modificarR.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_edit_;
+            this.modificarR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.modificarR.Location = new System.Drawing.Point(-1, 233);
+            this.modificarR.Name = "modificarR";
+            this.modificarR.Size = new System.Drawing.Size(219, 40);
+            this.modificarR.TabIndex = 9;
+            this.modificarR.Text = "Modificar residente";
+            this.modificarR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.modificarR.UseVisualStyleBackColor = true;
+            this.modificarR.Visible = false;
+            this.modificarR.Click += new System.EventHandler(this.modificarR_Click);
+            // 
+            // buscarM
+            // 
+            this.buscarM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buscarM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buscarM.Image = global::InventariosVillaAlegre.Properties.Resources._16__Searchnext_;
+            this.buscarM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.buscarM.Location = new System.Drawing.Point(-1, 49);
+            this.buscarM.Name = "buscarM";
+            this.buscarM.Size = new System.Drawing.Size(219, 40);
+            this.buscarM.TabIndex = 8;
+            this.buscarM.Text = "Buscar medicamento";
+            this.buscarM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buscarM.UseVisualStyleBackColor = true;
+            this.buscarM.Click += new System.EventHandler(this.buscarM_Click);
             // 
             // agregarM
             // 
+            this.agregarM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.agregarM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarM.Image = global::InventariosVillaAlegre.Properties.Resources._16__Quarantine_;
-            this.agregarM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.agregarM.Location = new System.Drawing.Point(-1, 329);
+            this.agregarM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.agregarM.Location = new System.Drawing.Point(-1, 325);
             this.agregarM.Name = "agregarM";
-            this.agregarM.Size = new System.Drawing.Size(200, 49);
+            this.agregarM.Size = new System.Drawing.Size(219, 40);
             this.agregarM.TabIndex = 1;
-            this.agregarM.Text = "Agregar Medicamento";
+            this.agregarM.Text = "Agregar medicamento";
+            this.agregarM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarM.UseVisualStyleBackColor = true;
             this.agregarM.Visible = false;
+            this.agregarM.Click += new System.EventHandler(this.agregarM_Click);
             // 
             // eliminarM
             // 
+            this.eliminarM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.eliminarM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminarM.Image = global::InventariosVillaAlegre.Properties.Resources._16__Card_delete_;
-            this.eliminarM.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.eliminarM.Location = new System.Drawing.Point(-1, 439);
+            this.eliminarM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.eliminarM.Location = new System.Drawing.Point(-1, 417);
             this.eliminarM.Name = "eliminarM";
-            this.eliminarM.Size = new System.Drawing.Size(200, 49);
+            this.eliminarM.Size = new System.Drawing.Size(219, 40);
             this.eliminarM.TabIndex = 7;
             this.eliminarM.Text = "Eliminar medicamento";
+            this.eliminarM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eliminarM.UseVisualStyleBackColor = true;
             this.eliminarM.Visible = false;
+            this.eliminarM.Click += new System.EventHandler(this.eliminarM_Click);
             // 
-            // actualizar
+            // actualizarM
             // 
-            this.actualizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualizar.Image = global::InventariosVillaAlegre.Properties.Resources._16__Contents_;
-            this.actualizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.actualizar.Location = new System.Drawing.Point(-1, 219);
-            this.actualizar.Name = "actualizar";
-            this.actualizar.Size = new System.Drawing.Size(200, 49);
-            this.actualizar.TabIndex = 6;
-            this.actualizar.Text = "Actualizar medicamento";
-            this.actualizar.UseVisualStyleBackColor = true;
-            this.actualizar.Visible = false;
+            this.actualizarM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.actualizarM.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualizarM.Image = global::InventariosVillaAlegre.Properties.Resources._16__Contents_;
+            this.actualizarM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.actualizarM.Location = new System.Drawing.Point(-1, 187);
+            this.actualizarM.Name = "actualizarM";
+            this.actualizarM.Size = new System.Drawing.Size(219, 40);
+            this.actualizarM.TabIndex = 6;
+            this.actualizarM.Text = "Actualizar medicamento\r\n";
+            this.actualizarM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.actualizarM.UseVisualStyleBackColor = true;
+            this.actualizarM.Visible = false;
+            this.actualizarM.Click += new System.EventHandler(this.actualizarM_Click);
             // 
             // eliminarR
             // 
+            this.eliminarR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.eliminarR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eliminarR.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_delete_;
-            this.eliminarR.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.eliminarR.Location = new System.Drawing.Point(-1, 384);
+            this.eliminarR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.eliminarR.Location = new System.Drawing.Point(-1, 371);
             this.eliminarR.Name = "eliminarR";
-            this.eliminarR.Size = new System.Drawing.Size(200, 49);
+            this.eliminarR.Size = new System.Drawing.Size(219, 40);
             this.eliminarR.TabIndex = 5;
             this.eliminarR.Text = "Eliminar residente";
+            this.eliminarR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.eliminarR.UseVisualStyleBackColor = true;
             this.eliminarR.Visible = false;
+            this.eliminarR.Click += new System.EventHandler(this.eliminarR_Click);
             // 
             // agregarR
             // 
+            this.agregarR.Cursor = System.Windows.Forms.Cursors.Hand;
             this.agregarR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.agregarR.Image = global::InventariosVillaAlegre.Properties.Resources._16__User_add_;
-            this.agregarR.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.agregarR.Location = new System.Drawing.Point(-1, 274);
+            this.agregarR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.agregarR.Location = new System.Drawing.Point(-1, 279);
             this.agregarR.Name = "agregarR";
-            this.agregarR.Size = new System.Drawing.Size(200, 49);
+            this.agregarR.Size = new System.Drawing.Size(219, 40);
             this.agregarR.TabIndex = 4;
             this.agregarR.Text = "Agregar residente";
+            this.agregarR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.agregarR.UseVisualStyleBackColor = true;
             this.agregarR.Visible = false;
+            this.agregarR.Click += new System.EventHandler(this.agregarR_Click);
             // 
-            // button4
+            // listaM
             // 
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Image = global::InventariosVillaAlegre.Properties.Resources._16__View_normal_;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button4.Location = new System.Drawing.Point(-1, 164);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(200, 49);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "Lista de medicamentos";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.listaM.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listaM.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaM.Image = global::InventariosVillaAlegre.Properties.Resources._16__View_normal_;
+            this.listaM.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.listaM.Location = new System.Drawing.Point(-1, 141);
+            this.listaM.Name = "listaM";
+            this.listaM.Size = new System.Drawing.Size(219, 40);
+            this.listaM.TabIndex = 3;
+            this.listaM.Text = "Lista de medicamentos";
+            this.listaM.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.listaM.UseVisualStyleBackColor = true;
+            this.listaM.Click += new System.EventHandler(this.listaM_Click);
             // 
-            // button3
+            // fichaR
             // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Image = global::InventariosVillaAlegre.Properties.Resources._16__Idcard_;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(-1, -1);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 49);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Ficha de residente";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.fichaR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.fichaR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fichaR.Image = global::InventariosVillaAlegre.Properties.Resources._16__Idcard_;
+            this.fichaR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.fichaR.Location = new System.Drawing.Point(-1, 3);
+            this.fichaR.Name = "fichaR";
+            this.fichaR.Size = new System.Drawing.Size(219, 40);
+            this.fichaR.TabIndex = 2;
+            this.fichaR.Text = "Ficha de residente";
+            this.fichaR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.fichaR.UseVisualStyleBackColor = true;
+            this.fichaR.Click += new System.EventHandler(this.fichaR_Click_1);
             // 
-            // button1
+            // listaR
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::InventariosVillaAlegre.Properties.Resources._16__Goto_line_;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(-1, 109);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 49);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Lista de residentes";
-            this.button1.UseVisualStyleBackColor = true;
+            this.listaR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.listaR.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listaR.Image = global::InventariosVillaAlegre.Properties.Resources._16__Goto_line_;
+            this.listaR.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.listaR.Location = new System.Drawing.Point(-1, 95);
+            this.listaR.Name = "listaR";
+            this.listaR.Size = new System.Drawing.Size(219, 40);
+            this.listaR.TabIndex = 0;
+            this.listaR.Text = "Lista de residentes";
+            this.listaR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.listaR.UseVisualStyleBackColor = true;
+            this.listaR.Click += new System.EventHandler(this.listaR_Click);
             // 
             // baner
             // 
@@ -322,7 +365,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::InventariosVillaAlegre.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1148, 617);
-            this.Controls.Add(this.contenido);
+            this.Controls.Add(this.contenedor);
             this.Controls.Add(this.menu);
             this.Controls.Add(this.baner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -342,7 +385,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel contenido;
+        private System.Windows.Forms.Panel contenedor;
         private System.Windows.Forms.Panel menu;
         private System.Windows.Forms.Panel baner;
         private System.Windows.Forms.Panel panel1;
@@ -355,14 +398,15 @@
         private System.Windows.Forms.Label user;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button buscarM;
         private System.Windows.Forms.Button agregarM;
         private System.Windows.Forms.Button eliminarM;
-        private System.Windows.Forms.Button actualizar;
+        private System.Windows.Forms.Button actualizarM;
         private System.Windows.Forms.Button eliminarR;
         private System.Windows.Forms.Button agregarR;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button listaM;
+        private System.Windows.Forms.Button fichaR;
+        private System.Windows.Forms.Button listaR;
+        private System.Windows.Forms.Button modificarR;
     }
 }
